@@ -1,0 +1,1 @@
+=IF(RIGHT(C34,6)="Middle",CONCATENATE(C34&" School"),IF(RIGHT(C34,4)="Elem",CONCATENATE(C34&"entary School"),IF(RIGHT(C34,4)="High",CONCATENATE(C34&" School"),C34)))
