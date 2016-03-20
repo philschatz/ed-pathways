@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# BASE_DIR=$(dirname $0)   # Commented since this is unused
+
+# The sqlite database file where all the data in the DB will be stored
+DB_FILE=./db/ed-pathways.sqlite
+
+# When using an older version of OSX, phil needed to change the default sqlite3
+# command to be the one from Homebrew rather than the system one.
+# SQLITE_BIN=/usr/local/Cellar/sqlite/3.11.0/bin/sqlite3
+SQLITE_BIN=sqlite3
+
+
+# Remove the existing sqlite file if it exists
+# First, check if the file exists
+if [ -e ${DB_FILE} ]
+then
+  # from https://stackoverflow.com/questions/226703/how-do-i-prompt-for-input-in-a-linux-shell-script/27875395#27875395
+  read -p "Do you wish to continue? It will clear the existing DB (y/n)?" answer
+  case ${answer:0:1} in
+      y|Y )
+          rm ${DB_FILE}
+      ;;
+      * )
+          echo "Cancelling import"
+          exit 1
+      ;;
+  esac
+fi
+
+# Run the commands in sqlite-import-commands.txt to populate the sqlite db file in ./db/
+# Note: the current directory is not `./script/`, it is `./` (the parent of the directory this file is in)
+cat ./script/sqlite-import-commands.sql | ${SQLITE_BIN} ${DB_FILE}
