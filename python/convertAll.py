@@ -18,10 +18,3 @@ for csv in csvs:
     csv2sql = Csv2Sql(*csv)
     csv2sql.toDDL()
     
-# Example:  convert schools_ordered_updated csv file to Schools sql table.  
-# This will create two new files:  Schools.db is the sqllite database file,
-# and Schools.sql is the DDL output file suitable for import into any SQL database
-#csv2sql = Csv2Sql('C:\Users\slewis\git\ed-pathways\data\OASK_DB.csv','OASK')
-# This does all the work
-#csv2sql.toDDL()
-
