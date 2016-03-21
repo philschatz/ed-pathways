@@ -1,4 +1,4 @@
-County,Agr.,Site.,Sponsor.Name,Site.Name,School.ID,Area.Eligible.School,Street.Address,Addr2,City,State,Zip.Code,Opening.Date,Closing.Date,Operating.Days,Breakfasts.Served,AM.Snacks.Served,Lunches.Served,PM.Snacks.Served,Suppers.Served,X
+County,Agr.,Site.,Sponsor.Name,Site.Name,SchoolID,Area.Eligible.School,Street.Address,Addr2,City,State,Zip.Code,Opening.Date,Closing.Date,Operating.Days,Breakfasts.Served,AM.Snacks.Served,Lunches.Served,PM.Snacks.Served,Suppers.Served,X
 Deschutes,918002,14881,Redmond SD 2J,Redmond Boys & Girls Club,,259,145 SE Salmon,,Redmond,OR,97756,10-Jun-13,23-Aug-13,53,1678,0,3082,0,0,NA
 Morrow,2513001,10918,Morrow Co SD,A C Houghton Elem,813,AC Houghton Elementary,1105 N. Main Avenue,,Irrigon,OR,97844,12-Jun-13,28-Jun-13,13,1739,0,1812,0,0,NA
 Lane,2006004,12450,Food For Lane County,Washington Park,503,Adams Elementary School,19th & Washington,,Eugene,OR,97401,24-Jun-13,23-Aug-13,44,0,0,1770,0,0,NA
