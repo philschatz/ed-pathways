@@ -16,9 +16,9 @@ results = con.execute('Select Summer_2015.SchoolID, Performance.School, Summer_2
 
 all_rows = results.fetchall()
 
-#print rowas
+#print rows
 for row in all_rows:
-    print list(row)
+    print '%s,%s,%s,%s,%s,%s' % row 
     
 con.close()
 
