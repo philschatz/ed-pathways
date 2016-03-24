@@ -8,5 +8,5 @@
 .import ./data/OASK_DB.csv OASK
 .import ./data/Performance.csv Performance
 .import ./data/Summer_2013.csv Summer_2013
-.import ./data/Summer_2014.csv Summer_2014
+-- .import ./data/Summer_2014.csv Summer_2014
 .import ./data/Summer_2015.csv Summer_2015
