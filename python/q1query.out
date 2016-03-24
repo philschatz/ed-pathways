@@ -1,5 +1,5 @@
-Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.Activities, Performance.Subject, Performance.ParticipationRate2014to2015, Performance.Level3or4in2014to2015 from Summer_2015 Inner Join Performance on Summer_2015.SchoolID=Performance.SchoolID where Performance.Subgroup="Total Population"
-
+#Below are Results from query:  Select Summer_2015.SchoolID, Performance.School, replace(Summer_2015.Activities, ",", "") as "Summer_15.Activities", Performance.Subject, Performance.ParticipationRate2014to2015, Performance.Level3or4in2014to2015 from Summer_2015 Inner Join Performance on Summer_2015.SchoolID=Performance.SchoolID where Performance.Subgroup="Total Population"
+#
 30,Garfield Elementary School,Parks & Rec program,English Language Arts,99.4,31.1
 30,Garfield Elementary School,Parks & Rec program,Mathematics,99.4,24.6
 36,Lincoln Elementary School,Summer School,English Language Arts,99.4,46.1
@@ -12,10 +12,10 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 86,Milwaukie High School,High School Summer School,Mathematics,98.4,14.6
 94,Molalla Elementary School,None,English Language Arts,98.5,35.7
 94,Molalla Elementary School,None,Mathematics,99.0,39.0
-107,Holcomb Elementary School,There will be games, reading and/or art activities going on each day.,English Language Arts,100.0,46.7
-107,Holcomb Elementary School,There will be games, reading and/or art activities going on each day.,Mathematics,100.0,40.5
-115,Gardiner Middle School,Arts and crafts, literacy and/or games.,English Language Arts,98.5,65.6
-115,Gardiner Middle School,Arts and crafts, literacy and/or games.,Mathematics,97.9,45.2
+107,Holcomb Elementary School,There will be games reading and/or art activities going on each day.,English Language Arts,100.0,46.7
+107,Holcomb Elementary School,There will be games reading and/or art activities going on each day.,Mathematics,100.0,40.5
+115,Gardiner Middle School,Arts and crafts literacy and/or games.,English Language Arts,98.5,65.6
+115,Gardiner Middle School,Arts and crafts literacy and/or games.,Mathematics,97.9,45.2
 119,Butte Creek Elementary School,Public School,English Language Arts,100.0,58.7
 119,Butte Creek Elementary School,Public School,Mathematics,100.0,46.6
 121,Mulino Elementary School,Head Start class schedule,English Language Arts,97.6,45.5
@@ -28,8 +28,8 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 144,Astoria Middle School,Migrant Summer School,Mathematics,98.8,44.0
 150,Broadway Middle School,None,English Language Arts,98.2,52.4
 150,Broadway Middle School,None,Mathematics,97.9,36.6
-152,Seaside Heights Elementary School,The activity is not sponsored by the School District; however, the local Parks and Recreation District rents part of the facility for a daily summer program.,English Language Arts,99.5,46.3
-152,Seaside Heights Elementary School,The activity is not sponsored by the School District; however, the local Parks and Recreation District rents part of the facility for a daily summer program.,Mathematics,99.5,32.1
+152,Seaside Heights Elementary School,The activity is not sponsored by the School District; however the local Parks and Recreation District rents part of the facility for a daily summer program.,English Language Arts,99.5,46.3
+152,Seaside Heights Elementary School,The activity is not sponsored by the School District; however the local Parks and Recreation District rents part of the facility for a daily summer program.,Mathematics,99.5,32.1
 156,Warrenton Grade School,Summer pre-school.,English Language Arts,99.5,46.2
 156,Warrenton Grade School,Summer pre-school.,Mathematics,99.3,36.9
 163,Clatskanie Elementary School,They are doing KinderCamp this week.  It will also be a good test to see if we would want to expand program in the future.,English Language Arts,98.5,50.3
@@ -54,16 +54,16 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 209,North Bend Senior High School,None,Mathematics,89.9,19.6
 219,Crooked River Elementary School,None,English Language Arts,98.5,53.1
 219,Crooked River Elementary School,None,Mathematics,99.0,50.8
-221,Ochoco Elementary School,Kids Club - Crafts, Sports, Enrichment / Summer School  Sibling 1-18 welcome,English Language Arts,96.9,35.5
-221,Ochoco Elementary School,Kids Club - Crafts, Sports, Enrichment / Summer School  Sibling 1-18 welcome,Mathematics,97.5,28.8
+221,Ochoco Elementary School,Kids Club - Crafts Sports Enrichment / Summer School  Sibling 1-18 welcome,English Language Arts,96.9,35.5
+221,Ochoco Elementary School,Kids Club - Crafts Sports Enrichment / Summer School  Sibling 1-18 welcome,Mathematics,97.5,28.8
 228,Driftwood Elementary School,Summer Math & Reading activities.,English Language Arts,98.7,50.0
 228,Driftwood Elementary School,Summer Math & Reading activities.,Mathematics,98.7,43.6
-231,Riley Creek Elementary School,School, Athletic Events, Community Events, etc.  ,English Language Arts,100.0,52.4
-231,Riley Creek Elementary School,School, Athletic Events, Community Events, etc.  ,Mathematics,98.9,29.0
-237,Brookings-Harbor High School,Crafts, reading, sports activities, field trips etc.,English Language Arts,99.2,58.9
-237,Brookings-Harbor High School,Crafts, reading, sports activities, field trips etc.,Mathematics,98.4,18.7
-239,Gold Beach High School,School, Athletic Events, Community Events, etc.,English Language Arts,88.6,77.4
-239,Gold Beach High School,School, Athletic Events, Community Events, etc.,Mathematics,91.4,31.3
+231,Riley Creek Elementary School,School Athletic Events Community Events etc.  ,English Language Arts,100.0,52.4
+231,Riley Creek Elementary School,School Athletic Events Community Events etc.  ,Mathematics,98.9,29.0
+237,Brookings-Harbor High School,Crafts reading sports activities field trips etc.,English Language Arts,99.2,58.9
+237,Brookings-Harbor High School,Crafts reading sports activities field trips etc.,Mathematics,98.4,18.7
+239,Gold Beach High School,School Athletic Events Community Events etc.,English Language Arts,88.6,77.4
+239,Gold Beach High School,School Athletic Events Community Events etc.,Mathematics,91.4,31.3
 241,Bear Creek Elementary School,Lunch and Learn,English Language Arts,99.7,42.0
 241,Bear Creek Elementary School,Lunch and Learn,Mathematics,99.7,41.0
 256,Sage Elementary School,Summer enrichment program for migrant students.,English Language Arts,99.3,47.9
@@ -84,10 +84,10 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 279,Joseph Lane Middle School,None,Mathematics,98.1,37.1
 280,Roseburg High School,Extended School Year.,English Language Arts,97.7,74.3
 280,Roseburg High School,Extended School Year.,Mathematics,97.2,30.6
-289,Canyonville School,crafts, games and summer school,English Language Arts,99.2,39.2
-289,Canyonville School,crafts, games and summer school,Mathematics,97.5,25.4
-290,Myrtle Creek Elementary School,Crafts, games, and summer school,English Language Arts,100.0,29.5
-290,Myrtle Creek Elementary School,Crafts, games, and summer school,Mathematics,100.0,16.8
+289,Canyonville School,crafts games and summer school,English Language Arts,99.2,39.2
+289,Canyonville School,crafts games and summer school,Mathematics,97.5,25.4
+290,Myrtle Creek Elementary School,Crafts games and summer school,English Language Arts,100.0,29.5
+290,Myrtle Creek Elementary School,Crafts games and summer school,Mathematics,100.0,16.8
 292,Tri City Elementary School,crafts/games/summer school,English Language Arts,100.0,33.6
 292,Tri City Elementary School,crafts/games/summer school,Mathematics,100.0,22.1
 296,North Douglas Elementary School,Summer School and Extended School Year Programs at the site(s).,English Language Arts,98.6,41.5
@@ -104,16 +104,16 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 363,Mid Valley Elementary School,Migrant School,Mathematics,98.3,35.4
 371,Phoenix Elementary School,None,English Language Arts,99.4,39.1
 371,Phoenix Elementary School,None,Mathematics,98.9,27.7
-372,Talent Elementary School,Crafts & Group Activities, Boys & Girls Club,English Language Arts,88.2,45.2
-372,Talent Elementary School,Crafts & Group Activities, Boys & Girls Club,Mathematics,98.8,32.7
+372,Talent Elementary School,Crafts & Group Activities Boys & Girls Club,English Language Arts,88.2,45.2
+372,Talent Elementary School,Crafts & Group Activities Boys & Girls Club,Mathematics,98.8,32.7
 374,Phoenix High School,None,English Language Arts,99.4,66.5
 374,Phoenix High School,None,Mathematics,99.4,44.1
 375,Bellview Elementary School,Summer school,English Language Arts,100.0,74.1
 375,Bellview Elementary School,Summer school,Mathematics,100.0,66.0
 377,Helman Elementary School,Summer School,English Language Arts,98.0,70.7
 377,Helman Elementary School,Summer School,Mathematics,96.7,61.2
-379,Walker Elementary School,Summer School, Emergency services personnel visits, Science Works, daily activity table,English Language Arts,100.0,64.5
-379,Walker Elementary School,Summer School, Emergency services personnel visits, Science Works, daily activity table,Mathematics,100.0,60.9
+379,Walker Elementary School,Summer School Emergency services personnel visits Science Works daily activity table,English Language Arts,100.0,64.5
+379,Walker Elementary School,Summer School Emergency services personnel visits Science Works daily activity table,Mathematics,100.0,60.9
 381,Ashland High School,This is a Migrant Head Start center. The site is CCD certified.,English Language Arts,99.1,82.7
 381,Ashland High School,This is a Migrant Head Start center. The site is CCD certified.,Mathematics,98.3,50.7
 382,Central Point Elementary School,None,English Language Arts,97.3,40.6
@@ -124,22 +124,22 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 388,Scenic Middle School,School District sponsored Migrant program.  It is scheduled daily classes for a targeted group of students.,Mathematics,99.0,44.1
 390,Hillside Elementary,Summer School Focusing on math & reading grades K - 5  open to public during lunch service time.   Play ground on campus accessable,English Language Arts,99.6,35.1
 390,Hillside Elementary,Summer School Focusing on math & reading grades K - 5  open to public during lunch service time.   Play ground on campus accessable,Mathematics,99.1,33.5
-393,Shady Cove School,Shady Cove Summer School, enrolled program for students focusing on math and reading, Upper Rogue Youth Activities Program housed at the community center. Theatre Day Camp at Shady Cove School, as well as Robotics Day camp will also be housed at the community center, shall all participate with their meals at Shady Cove Open Site.,English Language Arts,100.0,32.9
-393,Shady Cove School,Shady Cove Summer School, enrolled program for students focusing on math and reading, Upper Rogue Youth Activities Program housed at the community center. Theatre Day Camp at Shady Cove School, as well as Robotics Day camp will also be housed at the community center, shall all participate with their meals at Shady Cove Open Site.,Mathematics,100.0,23.3
-394,Table Rock Elementary,Kids Unlimited has games, sports, educational, and physical activities daily. Kinder academy will be running in August 2015.,English Language Arts,100.0,33.0
-394,Table Rock Elementary,Kids Unlimited has games, sports, educational, and physical activities daily. Kinder academy will be running in August 2015.,Mathematics,100.0,25.2
+393,Shady Cove School,Shady Cove Summer School enrolled program for students focusing on math and reading Upper Rogue Youth Activities Program housed at the community center. Theatre Day Camp at Shady Cove School as well as Robotics Day camp will also be housed at the community center shall all participate with their meals at Shady Cove Open Site.,English Language Arts,100.0,32.9
+393,Shady Cove School,Shady Cove Summer School enrolled program for students focusing on math and reading Upper Rogue Youth Activities Program housed at the community center. Theatre Day Camp at Shady Cove School as well as Robotics Day camp will also be housed at the community center shall all participate with their meals at Shady Cove Open Site.,Mathematics,100.0,23.3
+394,Table Rock Elementary,Kids Unlimited has games sports educational and physical activities daily. Kinder academy will be running in August 2015.,English Language Arts,100.0,33.0
+394,Table Rock Elementary,Kids Unlimited has games sports educational and physical activities daily. Kinder academy will be running in August 2015.,Mathematics,100.0,25.2
 396,Eagle Point Middle School,Summer School classes  open to public during service time,English Language Arts,98.7,55.8
 396,Eagle Point Middle School,Summer School classes  open to public during service time,Mathematics,98.9,32.1
-397,Eagle Point High School,High School Credit Retrieval, Freshman Readiness courses, sports practice, theatre practice, weight lifting, and band. There are grades nine through twelve, and groups include AM and PM. Special note: 2 two week sessions, June 16th through 27th M-F, and August 11th through 22nd M-F.,English Language Arts,97.6,72.9
-397,Eagle Point High School,High School Credit Retrieval, Freshman Readiness courses, sports practice, theatre practice, weight lifting, and band. There are grades nine through twelve, and groups include AM and PM. Special note: 2 two week sessions, June 16th through 27th M-F, and August 11th through 22nd M-F.,Mathematics,97.3,21.1
+397,Eagle Point High School,High School Credit Retrieval Freshman Readiness courses sports practice theatre practice weight lifting and band. There are grades nine through twelve and groups include AM and PM. Special note: 2 two week sessions June 16th through 27th M-F and August 11th through 22nd M-F.,English Language Arts,97.6,72.9
+397,Eagle Point High School,High School Credit Retrieval Freshman Readiness courses sports practice theatre practice weight lifting and band. There are grades nine through twelve and groups include AM and PM. Special note: 2 two week sessions June 16th through 27th M-F and August 11th through 22nd M-F.,Mathematics,97.3,21.1
 399,Rogue River Elementary School,None,English Language Arts,98.6,29.6
 399,Rogue River Elementary School,None,Mathematics,99.5,24.2
 406,Butte Falls Charter School,None,English Language Arts,100.0,25.3
 406,Butte Falls Charter School,None,Mathematics,100.0,16.5
 411,Jackson Elementary School,Crafts & Group Activities,English Language Arts,99.2,33.2
 411,Jackson Elementary School,Crafts & Group Activities,Mathematics,99.2,28.3
-417,Roosevelt Elementary School,continued education curriculum, Migrant Education Site,English Language Arts,100.0,47.2
-417,Roosevelt Elementary School,continued education curriculum, Migrant Education Site,Mathematics,100.0,41.7
+417,Roosevelt Elementary School,continued education curriculum Migrant Education Site,English Language Arts,100.0,47.2
+417,Roosevelt Elementary School,continued education curriculum Migrant Education Site,Mathematics,100.0,41.7
 419,Washington Elementary School,Continued education curriculum - Migrant Ed. Site,English Language Arts,98.6,30.6
 419,Washington Elementary School,Continued education curriculum - Migrant Ed. Site,Mathematics,99.5,17.2
 421,Hedrick Middle School,Continued education curriculum,English Language Arts,98.0,61.3
@@ -154,10 +154,10 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 431,Metolius Elementary School,None,Mathematics,100.0,23.5
 432,Warm Springs K-8 Academy,K-1 Summer Program,English Language Arts,97.8,9.8
 432,Warm Springs K-8 Academy,K-1 Summer Program,Mathematics,97.4,9.3
-435,Allen Dale Elementary School,play ground, science camp, walking path, open library day,English Language Arts,99.6,43.4
-435,Allen Dale Elementary School,play ground, science camp, walking path, open library day,Mathematics,98.5,40.0
-442,Grants Pass High School,Camps,summer classes,GP City Pool,Family Solutions,English Language Arts,78.9,43.5
-442,Grants Pass High School,Camps,summer classes,GP City Pool,Family Solutions,Mathematics,83.5,23.0
+435,Allen Dale Elementary School,play ground science camp walking path open library day,English Language Arts,99.6,43.4
+435,Allen Dale Elementary School,play ground science camp walking path open library day,Mathematics,98.5,40.0
+442,Grants Pass High School,Campssummer classesGP City PoolFamily Solutions,English Language Arts,78.9,43.5
+442,Grants Pass High School,Campssummer classesGP City PoolFamily Solutions,Mathematics,83.5,23.0
 443,Evergreen Elementary School,recreational and cultural activities,English Language Arts,99.5,43.8
 443,Evergreen Elementary School,recreational and cultural activities,Mathematics,99.0,39.6
 444,Fleming Middle School,None,English Language Arts,99.2,62.1
@@ -166,8 +166,8 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 445,Fruitdale Elementary School,None,Mathematics,100.0,54.4
 448,Lincoln Savage Middle School,None,English Language Arts,99.4,62.4
 448,Lincoln Savage Middle School,None,Mathematics,98.6,39.4
-455,Hidden Valley High School,Math, Science-summer school,English Language Arts,98.8,64.4
-455,Hidden Valley High School,Math, Science-summer school,Mathematics,98.8,23.3
+455,Hidden Valley High School,Math Science-summer school,English Language Arts,98.8,64.4
+455,Hidden Valley High School,Math Science-summer school,Mathematics,98.8,23.3
 457,North Valley High School,None,English Language Arts,94.2,74.0
 457,North Valley High School,None,Mathematics,93.5,23.8
 457,North Valley High School,None,English Language Arts,94.2,74.0
@@ -188,8 +188,8 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 476,Merrill Elementary School,Migrant school program,Mathematics,100.0,42.9
 477,Peterson Elementary School,Camp Invention activities,English Language Arts,100.0,47.1
 477,Peterson Elementary School,Camp Invention activities,Mathematics,100.0,40.1
-478,Shasta Elementary School,summer school at Falcon Heights, plus open site,English Language Arts,99.7,44.1
-478,Shasta Elementary School,summer school at Falcon Heights, plus open site,Mathematics,100.0,41.2
+478,Shasta Elementary School,summer school at Falcon Heights plus open site,English Language Arts,99.7,44.1
+478,Shasta Elementary School,summer school at Falcon Heights plus open site,Mathematics,100.0,41.2
 479,Stearns Elementary School,summer school; plus open site,English Language Arts,100.0,32.5
 479,Stearns Elementary School,summer school; plus open site,Mathematics,100.0,28.4
 504,Awbrey Park Elementary School,None,English Language Arts,98.4,53.8
@@ -218,8 +218,8 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 573,Bohemia Elementary School,United Way Reading Spot,Mathematics,96.4,47.5
 576,Harrison Elementary School,None,English Language Arts,99.5,51.2
 576,Harrison Elementary School,None,Mathematics,99.5,46.4
-580,Cottage Grove High School,Summer School, open to the public,English Language Arts,96.1,74.5
-580,Cottage Grove High School,Summer School, open to the public,Mathematics,97.1,35.4
+580,Cottage Grove High School,Summer School open to the public,English Language Arts,96.1,74.5
+580,Cottage Grove High School,Summer School open to the public,Mathematics,97.1,35.4
 581,Cascade Middle School,Produce Plus - Bethel Free Farmers Market.  Picnic setting and activities for kids  OSU Extension Program Iron Chef Culinary Program for Youth,English Language Arts,97.6,47.2
 581,Cascade Middle School,Produce Plus - Bethel Free Farmers Market.  Picnic setting and activities for kids  OSU Extension Program Iron Chef Culinary Program for Youth,Mathematics,97.6,29.8
 584,Fairfield Elementary School,Pre Kindergarten preparedness class meets twice weekly,English Language Arts,98.7,45.5
@@ -232,10 +232,10 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 598,Lundy Elementary School,None,Mathematics,98.4,29.0
 599,Lowell Junior/Senior High School,None,English Language Arts,100.0,49.2
 599,Lowell Junior/Senior High School,None,Mathematics,100.0,31.7
-603,Marcola Elementary School,Library open, arts & crafts,English Language Arts,97.4,35.5
-603,Marcola Elementary School,Library open, arts & crafts,Mathematics,97.4,28.9
-609,Siuslaw Elementary School,Boys & Girls Club, possible summer school,English Language Arts,98.8,43.4
-609,Siuslaw Elementary School,Boys & Girls Club, possible summer school,Mathematics,99.1,38.2
+603,Marcola Elementary School,Library open arts & crafts,English Language Arts,97.4,35.5
+603,Marcola Elementary School,Library open arts & crafts,Mathematics,97.4,28.9
+609,Siuslaw Elementary School,Boys & Girls Club possible summer school,English Language Arts,98.8,43.4
+609,Siuslaw Elementary School,Boys & Girls Club possible summer school,Mathematics,99.1,38.2
 620,Taft Elementary School,Recreational activities includes arts and crafts as well as physical activities such as basketball. Some educational reading time & Science. ,English Language Arts,98.5,33.1
 620,Taft Elementary School,Recreational activities includes arts and crafts as well as physical activities such as basketball. Some educational reading time & Science. ,Mathematics,97.4,31.2
 625,Newport Intermediate School,Recreational activities includes arts and crafts as well as physical activities such as basketball. Some educational reading time.,English Language Arts,97.6,50.0
@@ -256,8 +256,8 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 648,Waverly Elementary School,None,Mathematics,97.8,34.1
 650,South Albany High School,None,English Language Arts,99.0,50.2
 650,South Albany High School,None,Mathematics,99.4,19.8
-652,Cascades School,Summer school. This will run Monday, Tuesday and Wednesday.,English Language Arts,98.9,45.3
-652,Cascades School,Summer school. This will run Monday, Tuesday and Wednesday.,Mathematics,98.4,38.9
+652,Cascades School,Summer school. This will run Monday Tuesday and Wednesday.,English Language Arts,98.9,45.3
+652,Cascades School,Summer school. This will run Monday Tuesday and Wednesday.,Mathematics,98.4,38.9
 653,Green Acres School,None,English Language Arts,99.3,32.3
 653,Green Acres School,None,Mathematics,99.3,26.3
 656,Mari-Linn Elementary School,None,English Language Arts,95.3,52.0
@@ -312,8 +312,8 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 746,Kennedy Elementary School,None,Mathematics,99.5,25.6
 750,McKinley Elementary School,Salem Keizer Education Foundation Enrichment classes offered to enrolled students,English Language Arts,98.8,66.9
 750,McKinley Elementary School,Salem Keizer Education Foundation Enrichment classes offered to enrolled students,Mathematics,98.8,54.7
-762,Swegle Elementary School,programming in three core areas-academic success, character & leadership and healthy lifestyles including physical ed, sports,English Language Arts,97.9,26.0
-762,Swegle Elementary School,programming in three core areas-academic success, character & leadership and healthy lifestyles including physical ed, sports,Mathematics,95.9,19.2
+762,Swegle Elementary School,programming in three core areas-academic success character & leadership and healthy lifestyles including physical ed sports,English Language Arts,97.9,26.0
+762,Swegle Elementary School,programming in three core areas-academic success character & leadership and healthy lifestyles including physical ed sports,Mathematics,95.9,19.2
 764,Yoshikai Elementary School,None,English Language Arts,99.6,49.2
 764,Yoshikai Elementary School,None,Mathematics,99.6,55.2
 765,Judson Middle School,None,English Language Arts,97.8,69.9
@@ -340,92 +340,92 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 796,Nellie Muir Elementary School,Summer School for migrant elementary students with Math & Reading from June 22 to July 17.,Mathematics,99.6,12.3
 797,Washington Elementary School,Jump Start Program for incoming Kinder students.,English Language Arts,100.0,18.6
 797,Washington Elementary School,Jump Start Program for incoming Kinder students.,Mathematics,100.0,18.6
-810,Cascade Junior High School,Reading, math, science and PE,English Language Arts,99.4,49.0
-810,Cascade Junior High School,Reading, math, science and PE,Mathematics,98.8,32.9
-814,Sam Boardman Elementary School,Summer school/reading, writing and math instruction on a daily basis in a classroom setting.,English Language Arts,100.0,33.3
-814,Sam Boardman Elementary School,Summer school/reading, writing and math instruction on a daily basis in a classroom setting.,Mathematics,100.0,28.0
+810,Cascade Junior High School,Reading math science and PE,English Language Arts,99.4,49.0
+810,Cascade Junior High School,Reading math science and PE,Mathematics,98.8,32.9
+814,Sam Boardman Elementary School,Summer school/reading writing and math instruction on a daily basis in a classroom setting.,English Language Arts,100.0,33.3
+814,Sam Boardman Elementary School,Summer school/reading writing and math instruction on a daily basis in a classroom setting.,Mathematics,100.0,28.0
 817,Irrigon Junior/Senior High School,Credit Recovery; Classroom Instruction,English Language Arts,97.3,50.8
 817,Irrigon Junior/Senior High School,Credit Recovery; Classroom Instruction,Mathematics,92.3,21.4
-820,Riverside Junior/Senior High School,Credit recovery; Math, Language Arts & Social Studies instruction; Home Ec; Robotics; Fitness; Arts & Crafts,English Language Arts,98.3,43.5
-820,Riverside Junior/Senior High School,Credit recovery; Math, Language Arts & Social Studies instruction; Home Ec; Robotics; Fitness; Arts & Crafts,Mathematics,98.9,17.0
-826,Arleta Elementary School,Enrichment activities such as reading, games, sports, and arts & crafts. ,English Language Arts,75.1,45.3
-826,Arleta Elementary School,Enrichment activities such as reading, games, sports, and arts & crafts. ,Mathematics,74.7,35.5
-830,Beach Elementary School,Enrichment actives such as sports, games, literacy, and arts and crafts.,English Language Arts,91.6,50.6
-830,Beach Elementary School,Enrichment actives such as sports, games, literacy, and arts and crafts.,Mathematics,91.3,41.5
-831,Beaumont Middle School,Enrichments activities such as sports, games, literacy, arts, and crafts. ,English Language Arts,88.8,61.8
-831,Beaumont Middle School,Enrichments activities such as sports, games, literacy, arts, and crafts. ,Mathematics,91.5,55.5
-833,Boise-Eliot Elementary School,Enrichment activities such as reading, writing, games, sports, and arts & crafts. ,English Language Arts,98.0,31.3
-833,Boise-Eliot Elementary School,Enrichment activities such as reading, writing, games, sports, and arts & crafts. ,Mathematics,96.6,25.3
-834,Bridger Elementary School,reading, art and physical recreation activities,English Language Arts,97.3,48.4
-834,Bridger Elementary School,reading, art and physical recreation activities,Mathematics,97.3,32.6
-841,Cesar Chavez K-8 School,Reading, art and physical recreation activities,English Language Arts,98.9,24.1
-841,Cesar Chavez K-8 School,Reading, art and physical recreation activities,Mathematics,98.5,21.1
-843,Creston Elementary School,Enrichment activities such as reading, writing, sports, games, arts, and crafts.,English Language Arts,92.1,54.6
-843,Creston Elementary School,Enrichment activities such as reading, writing, sports, games, arts, and crafts.,Mathematics,93.1,39.0
-849,George Middle School,Reading, art and physical activities,English Language Arts,92.8,17.6
-849,George Middle School,Reading, art and physical activities,Mathematics,93.4,11.7
-862,James John Elementary School,Enrichment activities such as reading, writing, playing games, sports, art and crafts. ,English Language Arts,95.5,29.4
-862,James John Elementary School,Enrichment activities such as reading, writing, playing games, sports, art and crafts. ,Mathematics,97.8,23.6
-866,King Elementary School,reading, art and physical recreation activities,English Language Arts,95.0,17.4
-866,King Elementary School,reading, art and physical recreation activities,Mathematics,97.2,10.8
-869,Lee Elementary School,Reading, art and physical recreation activities.,English Language Arts,97.3,43.6
-869,Lee Elementary School,Reading, art and physical recreation activities.,Mathematics,97.3,32.4
-870,Lent Elementary School,reading, writing, art, physical recreation activities,English Language Arts,97.3,24.0
-870,Lent Elementary School,reading, writing, art, physical recreation activities,Mathematics,97.0,17.8
-875,Marysville Elementary School,art, reading and physical recreation,English Language Arts,94.1,48.5
-875,Marysville Elementary School,art, reading and physical recreation,Mathematics,94.1,30.9
-878,Chief Joseph/Ockley Green School,Arts, crafts, music, math, reading,science and physical recreation activities are offered.,English Language Arts,78.8,49.5
-878,Chief Joseph/Ockley Green School,Arts, crafts, music, math, reading,science and physical recreation activities are offered.,Mathematics,77.2,35.5
-884,Rigler Elementary School,Reading, writing, art and physical recreation activities,English Language Arts,98.2,32.0
-884,Rigler Elementary School,Reading, writing, art and physical recreation activities,Mathematics,97.7,18.8
-887,Scott Elementary School,reading, art, crafts, physical recreation activities,English Language Arts,94.6,26.1
-887,Scott Elementary School,reading, art, crafts, physical recreation activities,Mathematics,82.7,12.6
-889,Sitton Elementary School,Reading, art, crafts and physical recreation activities,English Language Arts,98.9,27.5
-889,Sitton Elementary School,Reading, art, crafts and physical recreation activities,Mathematics,98.9,21.0
-895,Vernon Elementary School,gardening, reading, art, crafts and physical recreation activities,English Language Arts,79.7,39.1
-895,Vernon Elementary School,gardening, reading, art, crafts and physical recreation activities,Mathematics,80.7,36.8
-896,Vestal Elementary School,Enrichment activities such as reading, writing, sports, games, gardening, arts, and crafts. ,English Language Arts,96.7,43.5
-896,Vestal Elementary School,Enrichment activities such as reading, writing, sports, games, gardening, arts, and crafts. ,Mathematics,95.9,38.3
-900,Whitman Elementary School,reading, art, crafts, garden and physical recreation activities,English Language Arts,100.0,37.7
-900,Whitman Elementary School,reading, art, crafts, garden and physical recreation activities,Mathematics,100.0,22.2
-902,Woodlawn Elementary School,Reading, writing, games, sports, arts and crafts. ,English Language Arts,97.3,26.1
-902,Woodlawn Elementary School,Reading, writing, games, sports, arts and crafts. ,Mathematics,97.3,20.9
-903,Woodmere Elementary School,Reading, art, crafts and physical recreation activities,English Language Arts,98.2,42.2
-903,Woodmere Elementary School,Reading, art, crafts and physical recreation activities,Mathematics,99.4,33.3
-906,Benson Polytechnic High School,transition to high school, how to study, organizational skills,English Language Arts,54.5,57.8
-906,Benson Polytechnic High School,transition to high school, how to study, organizational skills,Mathematics,38.5,27.8
-913,Jefferson High School,tutoring, reading, art and physical recreation.,English Language Arts,92.2,52.8
-913,Jefferson High School,tutoring, reading, art and physical recreation.,Mathematics,86.1,10.1
-915,Madison High School,tutoring, reading, art and physical recreation,English Language Arts,70.0,47.3
-915,Madison High School,tutoring, reading, art and physical recreation,Mathematics,69.6,25.3
-918,Roosevelt High School,Reading, math, science, technology, art, crafts and physical activities.,English Language Arts,82.2,23.7
-918,Roosevelt High School,Reading, math, science, technology, art, crafts and physical activities.,Mathematics,83.2,10.8
+820,Riverside Junior/Senior High School,Credit recovery; Math Language Arts & Social Studies instruction; Home Ec; Robotics; Fitness; Arts & Crafts,English Language Arts,98.3,43.5
+820,Riverside Junior/Senior High School,Credit recovery; Math Language Arts & Social Studies instruction; Home Ec; Robotics; Fitness; Arts & Crafts,Mathematics,98.9,17.0
+826,Arleta Elementary School,Enrichment activities such as reading games sports and arts & crafts. ,English Language Arts,75.1,45.3
+826,Arleta Elementary School,Enrichment activities such as reading games sports and arts & crafts. ,Mathematics,74.7,35.5
+830,Beach Elementary School,Enrichment actives such as sports games literacy and arts and crafts.,English Language Arts,91.6,50.6
+830,Beach Elementary School,Enrichment actives such as sports games literacy and arts and crafts.,Mathematics,91.3,41.5
+831,Beaumont Middle School,Enrichments activities such as sports games literacy arts and crafts. ,English Language Arts,88.8,61.8
+831,Beaumont Middle School,Enrichments activities such as sports games literacy arts and crafts. ,Mathematics,91.5,55.5
+833,Boise-Eliot Elementary School,Enrichment activities such as reading writing games sports and arts & crafts. ,English Language Arts,98.0,31.3
+833,Boise-Eliot Elementary School,Enrichment activities such as reading writing games sports and arts & crafts. ,Mathematics,96.6,25.3
+834,Bridger Elementary School,reading art and physical recreation activities,English Language Arts,97.3,48.4
+834,Bridger Elementary School,reading art and physical recreation activities,Mathematics,97.3,32.6
+841,Cesar Chavez K-8 School,Reading art and physical recreation activities,English Language Arts,98.9,24.1
+841,Cesar Chavez K-8 School,Reading art and physical recreation activities,Mathematics,98.5,21.1
+843,Creston Elementary School,Enrichment activities such as reading writing sports games arts and crafts.,English Language Arts,92.1,54.6
+843,Creston Elementary School,Enrichment activities such as reading writing sports games arts and crafts.,Mathematics,93.1,39.0
+849,George Middle School,Reading art and physical activities,English Language Arts,92.8,17.6
+849,George Middle School,Reading art and physical activities,Mathematics,93.4,11.7
+862,James John Elementary School,Enrichment activities such as reading writing playing games sports art and crafts. ,English Language Arts,95.5,29.4
+862,James John Elementary School,Enrichment activities such as reading writing playing games sports art and crafts. ,Mathematics,97.8,23.6
+866,King Elementary School,reading art and physical recreation activities,English Language Arts,95.0,17.4
+866,King Elementary School,reading art and physical recreation activities,Mathematics,97.2,10.8
+869,Lee Elementary School,Reading art and physical recreation activities.,English Language Arts,97.3,43.6
+869,Lee Elementary School,Reading art and physical recreation activities.,Mathematics,97.3,32.4
+870,Lent Elementary School,reading writing art physical recreation activities,English Language Arts,97.3,24.0
+870,Lent Elementary School,reading writing art physical recreation activities,Mathematics,97.0,17.8
+875,Marysville Elementary School,art reading and physical recreation,English Language Arts,94.1,48.5
+875,Marysville Elementary School,art reading and physical recreation,Mathematics,94.1,30.9
+878,Chief Joseph/Ockley Green School,Arts crafts music math readingscience and physical recreation activities are offered.,English Language Arts,78.8,49.5
+878,Chief Joseph/Ockley Green School,Arts crafts music math readingscience and physical recreation activities are offered.,Mathematics,77.2,35.5
+884,Rigler Elementary School,Reading writing art and physical recreation activities,English Language Arts,98.2,32.0
+884,Rigler Elementary School,Reading writing art and physical recreation activities,Mathematics,97.7,18.8
+887,Scott Elementary School,reading art crafts physical recreation activities,English Language Arts,94.6,26.1
+887,Scott Elementary School,reading art crafts physical recreation activities,Mathematics,82.7,12.6
+889,Sitton Elementary School,Reading art crafts and physical recreation activities,English Language Arts,98.9,27.5
+889,Sitton Elementary School,Reading art crafts and physical recreation activities,Mathematics,98.9,21.0
+895,Vernon Elementary School,gardening reading art crafts and physical recreation activities,English Language Arts,79.7,39.1
+895,Vernon Elementary School,gardening reading art crafts and physical recreation activities,Mathematics,80.7,36.8
+896,Vestal Elementary School,Enrichment activities such as reading writing sports games gardening arts and crafts. ,English Language Arts,96.7,43.5
+896,Vestal Elementary School,Enrichment activities such as reading writing sports games gardening arts and crafts. ,Mathematics,95.9,38.3
+900,Whitman Elementary School,reading art crafts garden and physical recreation activities,English Language Arts,100.0,37.7
+900,Whitman Elementary School,reading art crafts garden and physical recreation activities,Mathematics,100.0,22.2
+902,Woodlawn Elementary School,Reading writing games sports arts and crafts. ,English Language Arts,97.3,26.1
+902,Woodlawn Elementary School,Reading writing games sports arts and crafts. ,Mathematics,97.3,20.9
+903,Woodmere Elementary School,Reading art crafts and physical recreation activities,English Language Arts,98.2,42.2
+903,Woodmere Elementary School,Reading art crafts and physical recreation activities,Mathematics,99.4,33.3
+906,Benson Polytechnic High School,transition to high school how to study organizational skills,English Language Arts,54.5,57.8
+906,Benson Polytechnic High School,transition to high school how to study organizational skills,Mathematics,38.5,27.8
+913,Jefferson High School,tutoring reading art and physical recreation.,English Language Arts,92.2,52.8
+913,Jefferson High School,tutoring reading art and physical recreation.,Mathematics,86.1,10.1
+915,Madison High School,tutoring reading art and physical recreation,English Language Arts,70.0,47.3
+915,Madison High School,tutoring reading art and physical recreation,Mathematics,69.6,25.3
+918,Roosevelt High School,Reading math science technology art crafts and physical activities.,English Language Arts,82.2,23.7
+918,Roosevelt High School,Reading math science technology art crafts and physical activities.,Mathematics,83.2,10.8
 925,Prescott Elementary School,Sun program and kindergarten readiness.,English Language Arts,97.4,37.2
 925,Prescott Elementary School,Sun program and kindergarten readiness.,Mathematics,96.9,31.6
 926,Russell Elementary,Boys and girls club and kindergarten readiness,English Language Arts,99.6,48.9
 926,Russell Elementary,Boys and girls club and kindergarten readiness,Mathematics,99.6,41.8
 928,Shaver Elementary School,Boys and girls club and kindergarten readiness.,English Language Arts,98.7,30.3
 928,Shaver Elementary School,Boys and girls club and kindergarten readiness.,Mathematics,99.4,26.8
-931,Parkrose High School,Sun School/Activities, summer school, athletic camps,English Language Arts,96.1,52.1
-931,Parkrose High School,Sun School/Activities, summer school, athletic camps,Mathematics,94.6,14.6
+931,Parkrose High School,Sun School/Activities summer school athletic camps,English Language Arts,96.1,52.1
+931,Parkrose High School,Sun School/Activities summer school athletic camps,Mathematics,94.6,14.6
 932,Dexter McCarty Middle School,None,English Language Arts,97.7,50.5
 932,Dexter McCarty Middle School,None,Mathematics,97.9,28.8
 933,East Gresham Elementary School,SUN program,English Language Arts,97.8,28.2
 933,East Gresham Elementary School,SUN program,Mathematics,97.8,18.9
 935,Highland Elementary School,Metropolitian Family Services Cafe Project,English Language Arts,99.2,26.4
 935,Highland Elementary School,Metropolitian Family Services Cafe Project,Mathematics,99.2,24.8
-943,Alder Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10. ,English Language Arts,96.7,15.5
-943,Alder Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10. ,Mathematics,95.1,13.4
-946,Glenfair Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,98.2,17.8
-946,Glenfair Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,97.2,12.2
-947,Hartley Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,99.6,26.6
-947,Hartley Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,99.6,17.5
-948,Margaret Scott Elementary School,Boys & Girls Club runs activities during meal time, as well as   Early Kindergarten Connect through RSD,English Language Arts,99.1,33.2
-948,Margaret Scott Elementary School,Boys & Girls Club runs activities during meal time, as well as   Early Kindergarten Connect through RSD,Mathematics,98.2,29.5
-949,Davis Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,98.2,11.7
-949,Davis Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,98.2,7.3
-952,Wilkes Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,99.5,24.8
-952,Wilkes Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,99.5,16.4
+943,Alder Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10. ,English Language Arts,96.7,15.5
+943,Alder Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10. ,Mathematics,95.1,13.4
+946,Glenfair Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,98.2,17.8
+946,Glenfair Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,97.2,12.2
+947,Hartley Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,99.6,26.6
+947,Hartley Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,99.6,17.5
+948,Margaret Scott Elementary School,Boys & Girls Club runs activities during meal time as well as   Early Kindergarten Connect through RSD,English Language Arts,99.1,33.2
+948,Margaret Scott Elementary School,Boys & Girls Club runs activities during meal time as well as   Early Kindergarten Connect through RSD,Mathematics,98.2,29.5
+949,Davis Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,98.2,11.7
+949,Davis Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,98.2,7.3
+952,Wilkes Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,99.5,24.8
+952,Wilkes Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,99.5,16.4
 954,Hauton B Lee Middle School,SUN - Metropolitan Family Services  ,English Language Arts,98.7,32.4
 954,Hauton B Lee Middle School,SUN - Metropolitan Family Services  ,Mathematics,98.6,24.9
 957,Reynolds High School,21st Century Grant Academics and Activities including  9th Grade counts; Early English Language Learners and   Each group does Friday field trips.  Space Limited and security issues make closed campus a must.,English Language Arts,97.6,48.8
@@ -436,8 +436,8 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 960,Centennial Middle School,sports and academic,Mathematics,97.2,44.2
 963,Parklane Elementary School,  El Programo Hispano SUN program,English Language Arts,98.5,28.5
 963,Parklane Elementary School,  El Programo Hispano SUN program,Mathematics,98.1,20.6
-963,Parklane Elementary School,Arts and Crafts, Science, Sports and Academic,English Language Arts,98.5,28.5
-963,Parklane Elementary School,Arts and Crafts, Science, Sports and Academic,Mathematics,98.1,20.6
+963,Parklane Elementary School,Arts and Crafts Science Sports and Academic,English Language Arts,98.5,28.5
+963,Parklane Elementary School,Arts and Crafts Science Sports and Academic,Mathematics,98.1,20.6
 964,Lynch View Elementary School,academic,English Language Arts,99.2,37.5
 964,Lynch View Elementary School,academic,Mathematics,98.8,32.4
 965,Lynch Wood Elementary School,academic,English Language Arts,97.7,25.5
@@ -450,16 +450,16 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 974,Gilbert Park Elementary School,Sun Program,Mathematics,98.7,39.4
 975,Lincoln Park Elementary School,Sun Program,English Language Arts,98.0,46.5
 975,Lincoln Park Elementary School,Sun Program,Mathematics,98.0,38.5
-978,Ventura Park Elementary School,Portland Parks, Arts, Crafts and Games,English Language Arts,98.3,46.6
-978,Ventura Park Elementary School,Portland Parks, Arts, Crafts and Games,Mathematics,98.8,29.7
+978,Ventura Park Elementary School,Portland Parks Arts Crafts and Games,English Language Arts,98.3,46.6
+978,Ventura Park Elementary School,Portland Parks Arts Crafts and Games,Mathematics,98.8,29.7
 978,Ventura Park Elementary School,Jump Start program for Kinders & Sun School,English Language Arts,98.3,46.6
 978,Ventura Park Elementary School,Jump Start program for Kinders & Sun School,Mathematics,98.8,29.7
 979,West Powellhurst Elementary School,Sun Program,English Language Arts,99.5,44.0
 979,West Powellhurst Elementary School,Sun Program,Mathematics,99.0,38.5
 980,Alice Ott Middle School,Sun Program,English Language Arts,99.9,65.4
 980,Alice Ott Middle School,Sun Program,Mathematics,99.9,53.5
-983,David Douglas High School,Summer programs including Sun School and math, since clubs,English Language Arts,94.3,57.5
-983,David Douglas High School,Summer programs including Sun School and math, since clubs,Mathematics,93.5,24.3
+983,David Douglas High School,Summer programs including Sun School and math since clubs,English Language Arts,94.3,57.5
+983,David Douglas High School,Summer programs including Sun School and math since clubs,Mathematics,93.5,24.3
 986,Gresham High School,Sun program,English Language Arts,99.0,80.6
 986,Gresham High School,Sun program,Mathematics,98.7,33.4
 989,Lyle Elementary School,None,English Language Arts,100.0,35.3
@@ -478,38 +478,38 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 1006,Falls City High School,None,Mathematics,88.2,26.7
 1016,Tillamook Junior High School,Camp 1: Tending community garden. Summer School: ELL Students,English Language Arts,98.9,43.6
 1016,Tillamook Junior High School,Camp 1: Tending community garden. Summer School: ELL Students,Mathematics,99.3,35.0
-1016,Tillamook Junior High School,Summer School, migrant education,English Language Arts,98.9,43.6
-1016,Tillamook Junior High School,Summer School, migrant education,Mathematics,99.3,35.0
-1017,Tillamook High School,summer credit recovery program, special ed program, band camp,English Language Arts,94.5,71.2
-1017,Tillamook High School,summer credit recovery program, special ed program, band camp,Mathematics,93.8,28.5
-1032,McNary Heights Elementary School,Umatilla School District in Collaboration with Umatilla-Morrow ESD will host a Regular/Migrant Summer School 7/6/15 to  8/14/15. We will be offering breakfast, as well as lunch to support this program. ,English Language Arts,99.0,23.0
-1032,McNary Heights Elementary School,Umatilla School District in Collaboration with Umatilla-Morrow ESD will host a Regular/Migrant Summer School 7/6/15 to  8/14/15. We will be offering breakfast, as well as lunch to support this program. ,Mathematics,99.0,19.3
+1016,Tillamook Junior High School,Summer School migrant education,English Language Arts,98.9,43.6
+1016,Tillamook Junior High School,Summer School migrant education,Mathematics,99.3,35.0
+1017,Tillamook High School,summer credit recovery program special ed program band camp,English Language Arts,94.5,71.2
+1017,Tillamook High School,summer credit recovery program special ed program band camp,Mathematics,93.8,28.5
+1032,McNary Heights Elementary School,Umatilla School District in Collaboration with Umatilla-Morrow ESD will host a Regular/Migrant Summer School 7/6/15 to  8/14/15. We will be offering breakfast as well as lunch to support this program. ,English Language Arts,99.0,23.0
+1032,McNary Heights Elementary School,Umatilla School District in Collaboration with Umatilla-Morrow ESD will host a Regular/Migrant Summer School 7/6/15 to  8/14/15. We will be offering breakfast as well as lunch to support this program. ,Mathematics,99.0,19.3
 1033,Umatilla High School,Summer School ,English Language Arts,94.7,60.7
 1033,Umatilla High School,Summer School ,Mathematics,91.5,10.5
-1036,Rocky Heights Elementary School,Summer Kids Camp  games, sports, arts and crafts,English Language Arts,100.0,50.6
-1036,Rocky Heights Elementary School,Summer Kids Camp  games, sports, arts and crafts,Mathematics,100.0,51.4
+1036,Rocky Heights Elementary School,Summer Kids Camp  games sports arts and crafts,English Language Arts,100.0,50.6
+1036,Rocky Heights Elementary School,Summer Kids Camp  games sports arts and crafts,Mathematics,100.0,51.4
 1057,Central Middle School,None,English Language Arts,99.5,32.8
 1057,Central Middle School,None,Mathematics,99.5,19.8
 1059,Grove Elementary School,None,English Language Arts,99.3,41.5
 1059,Grove Elementary School,None,Mathematics,99.3,23.7
-1082,Stella Mayfield Elementary School,summer school, swimming lessons right across the ball field.....,English Language Arts,98.2,31.7
-1082,Stella Mayfield Elementary School,summer school, swimming lessons right across the ball field.....,Mathematics,98.2,25.0
-1098,Dry Hollow Elementary School,OCDC Mig. Ed. only on Fridays & Saturdays = June 19, 20, 26 & 27, then July 3 (last day). Open to the public also. Then in August 3th through 19th, 2015 this site again would be open for pre-kindergarten activities.,English Language Arts,100.0,42.3
-1098,Dry Hollow Elementary School,OCDC Mig. Ed. only on Fridays & Saturdays = June 19, 20, 26 & 27, then July 3 (last day). Open to the public also. Then in August 3th through 19th, 2015 this site again would be open for pre-kindergarten activities.,Mathematics,99.2,30.0
+1082,Stella Mayfield Elementary School,summer school swimming lessons right across the ball field.....,English Language Arts,98.2,31.7
+1082,Stella Mayfield Elementary School,summer school swimming lessons right across the ball field.....,Mathematics,98.2,25.0
+1098,Dry Hollow Elementary School,OCDC Mig. Ed. only on Fridays & Saturdays = June 19 20 26 & 27 then July 3 (last day). Open to the public also. Then in August 3th through 19th 2015 this site again would be open for pre-kindergarten activities.,English Language Arts,100.0,42.3
+1098,Dry Hollow Elementary School,OCDC Mig. Ed. only on Fridays & Saturdays = June 19 20 26 & 27 then July 3 (last day). Open to the public also. Then in August 3th through 19th 2015 this site again would be open for pre-kindergarten activities.,Mathematics,99.2,30.0
 1100,The Dalles Middle School,None,English Language Arts,97.4,44.0
 1100,The Dalles Middle School,None,Mathematics,97.0,28.2
 1114,W Verne McKinney Elementary School,The computer lab will be open for online reading and other interactive games.  The school library will also be available for children to check out books.,English Language Arts,100.0,50.8
 1114,W Verne McKinney Elementary School,The computer lab will be open for online reading and other interactive games.  The school library will also be available for children to check out books.,Mathematics,100.0,37.5
-1133,Joseph Gale Elementary School,Community Based Activity Program and Extended School Year program, recreational activities and educational activities.,English Language Arts,99.2,30.6
-1133,Joseph Gale Elementary School,Community Based Activity Program and Extended School Year program, recreational activities and educational activities.,Mathematics,99.2,34.7
-1134,Forest Grove High School,Summer School, Credit Recovery, Open to neighborhood children,English Language Arts,89.2,41.7
-1134,Forest Grove High School,Summer School, Credit Recovery, Open to neighborhood children,Mathematics,88.0,25.5
-1135,Bridgeport Elementary School,Art and Craft Tables, visits from the Tualatin City Library,English Language Arts,100.0,53.5
-1135,Bridgeport Elementary School,Art and Craft Tables, visits from the Tualatin City Library,Mathematics,100.0,48.7
-1139,James Templeton Elementary School,Summer School Program, Arts and Crafts,English Language Arts,99.6,63.3
-1139,James Templeton Elementary School,Summer School Program, Arts and Crafts,Mathematics,99.6,51.8
-1140,Metzger Elementary School,Summer School Program, Tigard City Library,English Language Arts,100.0,43.6
-1140,Metzger Elementary School,Summer School Program, Tigard City Library,Mathematics,100.0,42.5
+1133,Joseph Gale Elementary School,Community Based Activity Program and Extended School Year program recreational activities and educational activities.,English Language Arts,99.2,30.6
+1133,Joseph Gale Elementary School,Community Based Activity Program and Extended School Year program recreational activities and educational activities.,Mathematics,99.2,34.7
+1134,Forest Grove High School,Summer School Credit Recovery Open to neighborhood children,English Language Arts,89.2,41.7
+1134,Forest Grove High School,Summer School Credit Recovery Open to neighborhood children,Mathematics,88.0,25.5
+1135,Bridgeport Elementary School,Art and Craft Tables visits from the Tualatin City Library,English Language Arts,100.0,53.5
+1135,Bridgeport Elementary School,Art and Craft Tables visits from the Tualatin City Library,Mathematics,100.0,48.7
+1139,James Templeton Elementary School,Summer School Program Arts and Crafts,English Language Arts,99.6,63.3
+1139,James Templeton Elementary School,Summer School Program Arts and Crafts,Mathematics,99.6,51.8
+1140,Metzger Elementary School,Summer School Program Tigard City Library,English Language Arts,100.0,43.6
+1140,Metzger Elementary School,Summer School Program Tigard City Library,Mathematics,100.0,42.5
 1143,Tualatin Elementary School,Summer School activities,English Language Arts,99.6,68.8
 1143,Tualatin Elementary School,Summer School activities,Mathematics,98.9,58.5
 1149,Reedville Elementary School,None,English Language Arts,100.0,22.6
@@ -518,8 +518,8 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 1151,Witch Hazel Elementary School,Hillsboro Park and Rec Jump into Summer Program,Mathematics,99.7,30.5
 1153,Aloha-Huber Park School,THPRD Tualatin Hills Park and Rec crafts and sports,English Language Arts,99.7,46.5
 1153,Aloha-Huber Park School,THPRD Tualatin Hills Park and Rec crafts and sports,Mathematics,99.7,46.7
-1154,Barnes Elementary School,Tualatin Hills Park and Recreation District, Rec Mobile,English Language Arts,98.9,33.7
-1154,Barnes Elementary School,Tualatin Hills Park and Recreation District, Rec Mobile,Mathematics,98.9,30.0
+1154,Barnes Elementary School,Tualatin Hills Park and Recreation District Rec Mobile,English Language Arts,98.9,33.7
+1154,Barnes Elementary School,Tualatin Hills Park and Recreation District Rec Mobile,Mathematics,98.9,30.0
 1155,Beaver Acres Elementary School,Parks and rec activities,English Language Arts,98.1,47.1
 1155,Beaver Acres Elementary School,Parks and rec activities,Mathematics,98.9,46.2
 1157,Greenway Elementary School,None,English Language Arts,100.0,47.9
@@ -558,12 +558,12 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 1187,Beaverton High School,None,Mathematics,93.0,37.0
 1188,Sunset High School,None,English Language Arts,83.5,77.7
 1188,Sunset High School,None,Mathematics,83.5,58.7
-1200,Glencoe High School,Summer Physical Fitness activities, including weight training and running.,English Language Arts,98.1,63.3
-1200,Glencoe High School,Summer Physical Fitness activities, including weight training and running.,Mathematics,97.8,27.5
+1200,Glencoe High School,Summer Physical Fitness activities including weight training and running.,English Language Arts,98.1,63.3
+1200,Glencoe High School,Summer Physical Fitness activities including weight training and running.,Mathematics,97.8,27.5
 1201,Hillsboro High School,Secondary Migrant Education Summer School,English Language Arts,97.6,70.9
 1201,Hillsboro High School,Secondary Migrant Education Summer School,Mathematics,96.8,25.7
-1213,Yamhill Carlton Elementary School,Summer School, Summer Library Program, American Heart Association Jumps and Hoops, and Local Summer Bible School is held in the school building,English Language Arts,97.5,34.2
-1213,Yamhill Carlton Elementary School,Summer School, Summer Library Program, American Heart Association Jumps and Hoops, and Local Summer Bible School is held in the school building,Mathematics,98.1,44.2
+1213,Yamhill Carlton Elementary School,Summer School Summer Library Program American Heart Association Jumps and Hoops and Local Summer Bible School is held in the school building,English Language Arts,97.5,34.2
+1213,Yamhill Carlton Elementary School,Summer School Summer Library Program American Heart Association Jumps and Hoops and Local Summer Bible School is held in the school building,Mathematics,98.1,44.2
 1217,Edwards Elementary School,None,English Language Arts,99.5,48.0
 1217,Edwards Elementary School,None,Mathematics,98.9,40.4
 1224,Willamina Elementary School,Summer School Program,English Language Arts,95.9,24.8
@@ -578,18 +578,18 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 1232,Wascher Elementary School,None,Mathematics,96.3,41.7
 1233,Patton Middle School,None,English Language Arts,96.8,57.0
 1233,Patton Middle School,None,Mathematics,96.0,40.7
-1235,Faulconer-Chapman School,Migrant summer school, academic and enrichment activities,English Language Arts,97.9,21.8
-1235,Faulconer-Chapman School,Migrant summer school, academic and enrichment activities,Mathematics,97.9,21.0
-1243,Lane Middle School,Enrichment activities such as reading, sports, games, arts and crafts. ,English Language Arts,99.3,39.7
-1243,Lane Middle School,Enrichment activities such as reading, sports, games, arts and crafts. ,Mathematics,99.3,32.6
-1254,Reynolds Middle School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,96.2,30.3
-1254,Reynolds Middle School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,97.4,20.6
+1235,Faulconer-Chapman School,Migrant summer school academic and enrichment activities,English Language Arts,97.9,21.8
+1235,Faulconer-Chapman School,Migrant summer school academic and enrichment activities,Mathematics,97.9,21.0
+1243,Lane Middle School,Enrichment activities such as reading sports games arts and crafts. ,English Language Arts,99.3,39.7
+1243,Lane Middle School,Enrichment activities such as reading sports games arts and crafts. ,Mathematics,99.3,32.6
+1254,Reynolds Middle School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,96.2,30.3
+1254,Reynolds Middle School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,97.4,20.6
 1267,Lincoln Elementary School,They are having a Kindergarden Jump Start program with skill & placement testings.,English Language Arts,98.9,20.6
 1267,Lincoln Elementary School,They are having a Kindergarden Jump Start program with skill & placement testings.,Mathematics,98.9,19.7
-1268,French Prairie Middle School,They are having 6th grade orientation with testing; math, reading & science. It will also be an open site.,English Language Arts,99.5,32.2
-1268,French Prairie Middle School,They are having 6th grade orientation with testing; math, reading & science. It will also be an open site.,Mathematics,99.2,18.9
-1291,Dayton Jr High School,Where the food grows theam. Learn where and how food is grown in our area.  Farm Day, Crafts, reading groups, garden sharing area, open gym.,English Language Arts,98.7,40.2
-1291,Dayton Jr High School,Where the food grows theam. Learn where and how food is grown in our area.  Farm Day, Crafts, reading groups, garden sharing area, open gym.,Mathematics,98.2,29.8
+1268,French Prairie Middle School,They are having 6th grade orientation with testing; math reading & science. It will also be an open site.,English Language Arts,99.5,32.2
+1268,French Prairie Middle School,They are having 6th grade orientation with testing; math reading & science. It will also be an open site.,Mathematics,99.2,18.9
+1291,Dayton Jr High School,Where the food grows theam. Learn where and how food is grown in our area.  Farm Day Crafts reading groups garden sharing area open gym.,English Language Arts,98.7,40.2
+1291,Dayton Jr High School,Where the food grows theam. Learn where and how food is grown in our area.  Farm Day Crafts reading groups garden sharing area open gym.,Mathematics,98.2,29.8
 1301,Tualatin High School,Summer School,English Language Arts,96.5,80.8
 1301,Tualatin High School,Summer School,Mathematics,97.1,57.1
 1308,Elk Meadow Elementary School,Summer school; playground activities,English Language Arts,99.2,64.5
@@ -602,30 +602,30 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 1321,Monroe Grade School,None,Mathematics,100.0,32.5
 1331,Stephens Middle School,Summer Academy offered for enrolled students,English Language Arts,99.8,46.0
 1331,Stephens Middle School,Summer Academy offered for enrolled students,Mathematics,99.1,31.0
-1338,Marshall High School,Enrichment activities such a reading, writing, games, sports, arts & crafts. ,English Language Arts,84.1,45.9
-1338,Marshall High School,Enrichment activities such a reading, writing, games, sports, arts & crafts. ,Mathematics,95.5,7.1
+1338,Marshall High School,Enrichment activities such a reading writing games sports arts & crafts. ,English Language Arts,84.1,45.9
+1338,Marshall High School,Enrichment activities such a reading writing games sports arts & crafts. ,Mathematics,95.5,7.1
 1352,Riverbend Elementary School,None,English Language Arts,99.1,37.0
 1352,Riverbend Elementary School,None,Mathematics,98.6,28.4
 1353,Agnes Stewart Middle School,Summer camp,English Language Arts,99.5,45.9
 1353,Agnes Stewart Middle School,Summer camp,Mathematics,99.5,33.2
-1359,Heritage Elementary,Open library, story time, games & other activities,English Language Arts,99.3,25.9
-1359,Heritage Elementary,Open library, story time, games & other activities,Mathematics,99.3,28.3
-1365,Woodland Elementary,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.    ,English Language Arts,98.2,31.7
-1365,Woodland Elementary,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.    ,Mathematics,98.7,22.7
-1773,Jefferson County Middle School,Sig Grant, ESY Summer School, Migrant Program,English Language Arts,97.7,36.0
-1773,Jefferson County Middle School,Sig Grant, ESY Summer School, Migrant Program,Mathematics,97.5,18.8
+1359,Heritage Elementary,Open library story time games & other activities,English Language Arts,99.3,25.9
+1359,Heritage Elementary,Open library story time games & other activities,Mathematics,99.3,28.3
+1365,Woodland Elementary,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.    ,English Language Arts,98.2,31.7
+1365,Woodland Elementary,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.    ,Mathematics,98.7,22.7
+1773,Jefferson County Middle School,Sig Grant ESY Summer School Migrant Program,English Language Arts,97.7,36.0
+1773,Jefferson County Middle School,Sig Grant ESY Summer School Migrant Program,Mathematics,97.5,18.8
 2783,Southridge High School,None,English Language Arts,97.3,85.8
 2783,Southridge High School,None,Mathematics,97.5,57.6
 2784,Grandhaven Elementary School,None,English Language Arts,97.2,62.2
 2784,Grandhaven Elementary School,None,Mathematics,97.2,67.1
 3342,Oak Grove Elementary,A Title I summer school program will be offered at this site.,English Language Arts,98.6,39.5
 3342,Oak Grove Elementary,A Title I summer school program will be offered at this site.,Mathematics,97.2,29.1
-3349,Prairie City School,Arts and crafts, science activities and games ,English Language Arts,98.6,47.8
-3349,Prairie City School,Arts and crafts, science activities and games ,Mathematics,98.6,39.1
+3349,Prairie City School,Arts and crafts science activities and games ,English Language Arts,98.6,47.8
+3349,Prairie City School,Arts and crafts science activities and games ,Mathematics,98.6,39.1
 3352,Jewell School,Summer Library ,English Language Arts,100.0,64.5
 3352,Jewell School,Summer Library ,Mathematics,98.7,41.3
-3353,Dayville School,Community garden, arts and crafts, PE type activities,English Language Arts,100.0,44.0
-3353,Dayville School,Community garden, arts and crafts, PE type activities,Mathematics,100.0,20.0
+3353,Dayville School,Community garden arts and crafts PE type activities,English Language Arts,100.0,44.0
+3353,Dayville School,Community garden arts and crafts PE type activities,Mathematics,100.0,20.0
 3433,Echo School,The district offers a variety of summer school educational and recreational program on Monday - Friday. Two weeks in June for Junior High and High School.  Two weeks in July for Elementary.,English Language Arts,98.4,53.2
 3433,Echo School,The district offers a variety of summer school educational and recreational program on Monday - Friday. Two weeks in June for Junior High and High School.  Two weeks in July for Elementary.,Mathematics,99.2,34.6
 3464,Ash Creek Elementary School,None,English Language Arts,98.8,33.3
@@ -644,18 +644,18 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 3624,Brockway Elementary School,Extended School Year Program for elementary students.,Mathematics,100.0,36.6
 3950,Albany Options School,Childcare and Summer School,English Language Arts,97.7,25.6
 3950,Albany Options School,Childcare and Summer School,Mathematics,None,5.0
-3989,Salish Ponds Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,99.1,25.3
-3989,Salish Ponds Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness, and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,98.2,23.3
+3989,Salish Ponds Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,English Language Arts,99.1,25.3
+3989,Salish Ponds Elementary School,Metropolitan Family Services (SUN) will be running a program from 7/13-8/6 (registration required) with reading readiness and activities. Early Kindergarten Transition will be participating (EKT)as well.  Lunch only from 6/22 -7/10.,Mathematics,98.2,23.3
 4004,New Urban High School,High School Summer School,English Language Arts,83.3,13.8
 4004,New Urban High School,High School Summer School,Mathematics,None,5.0
-4021,White Mountain Middle School,White Mountain Middle School and Upper Table Rock Elementary enrichment summer camp, as well as open site. ,English Language Arts,99.7,46.9
-4021,White Mountain Middle School,White Mountain Middle School and Upper Table Rock Elementary enrichment summer camp, as well as open site. ,Mathematics,99.7,22.3
+4021,White Mountain Middle School,White Mountain Middle School and Upper Table Rock Elementary enrichment summer camp as well as open site. ,English Language Arts,99.7,46.9
+4021,White Mountain Middle School,White Mountain Middle School and Upper Table Rock Elementary enrichment summer camp as well as open site. ,Mathematics,99.7,22.3
 4025,Coquille Valley Elementary,None,English Language Arts,97.9,40.5
 4025,Coquille Valley Elementary,None,Mathematics,98.7,31.4
 4038,Siletz Valley Schools,None,English Language Arts,100.0,26.0
 4038,Siletz Valley Schools,None,Mathematics,100.0,19.8
-4048,Irrigon Elementary School,Summer school/reading, writing and math instruction on a daily basis in a classroom setting.,English Language Arts,97.6,35.6
-4048,Irrigon Elementary School,Summer school/reading, writing and math instruction on a daily basis in a classroom setting.,Mathematics,97.6,23.9
+4048,Irrigon Elementary School,Summer school/reading writing and math instruction on a daily basis in a classroom setting.,English Language Arts,97.6,35.6
+4048,Irrigon Elementary School,Summer school/reading writing and math instruction on a daily basis in a classroom setting.,Mathematics,97.6,23.9
 4068,Harritt Elementary School,Giving books out to kids during lunch.,English Language Arts,97.8,48.9
 4068,Harritt Elementary School,Giving books out to kids during lunch.,Mathematics,99.1,37.4
 4146,Cesar Chavez Elementary School,None,English Language Arts,95.9,49.8
@@ -664,14 +664,14 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 4157,Holt Elementary School,None,Mathematics,98.1,40.9
 4232,Ron Russell Middle School,Sun School,English Language Arts,99.1,56.6
 4232,Ron Russell Middle School,Sun School,Mathematics,99.5,38.9
-4391,Phoenix School,Summer School, Kids Camps,English Language Arts,81.1,39.5
-4391,Phoenix School,Summer School, Kids Camps,Mathematics,77.4,9.8
+4391,Phoenix School,Summer School Kids Camps,English Language Arts,81.1,39.5
+4391,Phoenix School,Summer School Kids Camps,Mathematics,77.4,9.8
 4396,Vernonia Middle School,During summer months various sports camps and othe activities occur. Summer meals will be served at this site when these activities are taking place. ,English Language Arts,98.4,35.5
 4396,Vernonia Middle School,During summer months various sports camps and othe activities occur. Summer meals will be served at this site when these activities are taking place. ,Mathematics,100.0,24.4
-4434,Baker Prairie Middle School,Summer School Program, Migrant Summer School Program.,English Language Arts,96.7,55.9
-4434,Baker Prairie Middle School,Summer School Program, Migrant Summer School Program.,Mathematics,96.5,44.0
-4543,Woodburn Arts and Communications Academy,Summer School program with math, literacy & social sciences,English Language Arts,97.3,70.4
-4543,Woodburn Arts and Communications Academy,Summer School program with math, literacy & social sciences,Mathematics,98.6,8.3
+4434,Baker Prairie Middle School,Summer School Program Migrant Summer School Program.,English Language Arts,96.7,55.9
+4434,Baker Prairie Middle School,Summer School Program Migrant Summer School Program.,Mathematics,96.5,44.0
+4543,Woodburn Arts and Communications Academy,Summer School program with math literacy & social sciences,English Language Arts,97.3,70.4
+4543,Woodburn Arts and Communications Academy,Summer School program with math literacy & social sciences,Mathematics,98.6,8.3
 4639,Sue Buel Elementary,None,English Language Arts,99.2,47.8
 4639,Sue Buel Elementary,None,Mathematics,99.2,35.5
 4642,Lincoln Street Elementary School,Pre-K and K-6 summer education program.,English Language Arts,99.0,26.9
@@ -686,7 +686,7 @@ Results of query:  Select Summer_2015.SchoolID, Performance.School, Summer_2015.
 4857,Winter Lakes School,None,Mathematics,None,5.0
 5058,Ridgeview High School,Camp 9-program designed to strengthen transition to High School for incoming freshman.,English Language Arts,94.5,72.1
 5058,Ridgeview High School,Camp 9-program designed to strengthen transition to High School for incoming freshman.,Mathematics,93.6,26.5
-5059,Two Rivers Dos Rios Elementary,Migrant Education program Summer School- not a migrant site, just using the school -- closed to the public,English Language Arts,99.5,34.7
-5059,Two Rivers Dos Rios Elementary,Migrant Education program Summer School- not a migrant site, just using the school -- closed to the public,Mathematics,99.0,29.7
-5064,Cesar E Chavez Elem,Books and possibly open Library, possible Kinder camp/ mostly only community kids this year. Summer School is at Hoover.,English Language Arts,98.9,31.9
-5064,Cesar E Chavez Elem,Books and possibly open Library, possible Kinder camp/ mostly only community kids this year. Summer School is at Hoover.,Mathematics,98.5,25.2
+5059,Two Rivers Dos Rios Elementary,Migrant Education program Summer School- not a migrant site just using the school -- closed to the public,English Language Arts,99.5,34.7
+5059,Two Rivers Dos Rios Elementary,Migrant Education program Summer School- not a migrant site just using the school -- closed to the public,Mathematics,99.0,29.7
+5064,Cesar E Chavez Elem,Books and possibly open Library possible Kinder camp/ mostly only community kids this year. Summer School is at Hoover.,English Language Arts,98.9,31.9
+5064,Cesar E Chavez Elem,Books and possibly open Library possible Kinder camp/ mostly only community kids this year. Summer School is at Hoover.,Mathematics,98.5,25.2
