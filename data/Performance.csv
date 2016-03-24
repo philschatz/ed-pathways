@@ -1,4 +1,4 @@
-DistrictID,District,SchoolID,School,AcademicYear,Subject,Subgroup,GradeLevel,"2014-2015Participation Rate","2014-2015% Level 3 or 4"
+DistrictID,District,SchoolID,School,AcademicYear,Subject,Subgroup,GradeLevel,"ParticipationRate2014to2015",Level3or4in2014to2015
 2063,Adel SD 21,498,Adel Elementary School,20142015,English Language Arts,Econo. Disadvantaged,All,*,*
 2063,Adel SD 21,498,Adel Elementary School,20142015,English Language Arts,Female,All,*,*
 2063,Adel SD 21,498,Adel Elementary School,20142015,English Language Arts,Male,All,*,*
