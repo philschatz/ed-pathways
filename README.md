@@ -17,5 +17,6 @@ Also, see [Trello Issue Board](https://trello.com/b/HJQ4ZF9v)
 - `pip install --upgrade pip`
 - `pip install pandas==0.18.0`
 - `pip install pysqlite==2.8.2`
-- `python ./python/q1tableimport.py`
-- `python ./python/q1query.py`
+- `cd python`
+- `python ./q1tableimport.py`
+- `python ./q1query.py`

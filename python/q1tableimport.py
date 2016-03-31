@@ -7,10 +7,11 @@ import sqlite3 as lite
 import pandas as pd
 
 # csv files to read
-performance = ('./data/Performance.csv','Performance')
-summer2015 = ('./data/Summer_2015.csv','Summer_2015')
-oask = ('./data/OASK_DB.csv','OASK')
-rcmediaschoolsaggregate = ('./data/RCmediaSchoolsAggregate.csv','RCmediaSchoolsAggregate')
+summer2015 = ('../data/Summer_2015.csv','Summer_2015')
+oask = ('../data/OASK_DB.csv','OASK')
+performance = ('../data/Performance.csv','Performance')
+rcmediaschoolsaggregate = ('../data/RCmediaSchoolsAggregate.csv','RCmediaSchoolsAggregate')
+
 #output file name
 outputfilename = 'q1tableimport'
 
