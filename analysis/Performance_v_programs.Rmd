@@ -1,0 +1,145 @@
+---
+title: "Summer Programs’ Effect on Poverty-Adjusted Performance"
+author: "Kyle Joecken"
+date: "March 21, 2016"
+output: pdf_document
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(reshape2)
+library(ggplot2)
+```
+
+## Abstract
+
+We look at the effect of summer and food programs on the performance of Oregon schools after controlling for the effects of poverty.
+
+## Controlling for Poverty
+
+First, we need to load the data into data frames and clean what we have.  We'll read poverty data in first, dropping rows of schools on which we don't have complete data (many of these are Jails/Juvenile facilities or EI/ECSE programs):
+
+```{r}
+# Read into a variable from csv, keeping only columns we care about
+poverty <- read.csv("../data/FreeReducedLunch.csv", stringsAsFactors = FALSE)
+poverty <- poverty[, c(1, 5, 8, 11, 14, 17)]
+# Eliminate incomplete cases
+poverty <- poverty[complete.cases(poverty), ]
+head(poverty)
+```
+
+\newpage
+
+We next load performance data on English and Mathematics.  These data will need to be heavily massaged to get them into a format we can proceed with.
+
+```{r}
+# Read into a variable from csv, keeping only columns we care about
+performance <- read.csv("../data/Performance.csv", stringsAsFactors = FALSE)
+performance <- performance[, c(3, 6, 7, 9, 10)]
+# Shorten terms, column names
+performance$Subject[performance$Subject == "English Language Arts"] <- "Eng"
+performance$Subject[performance$Subject == "Mathematics"] <- "Math"
+performance$Subgroup[performance$Subgroup == "American Indian/Alaskan Native"] <- "NaAmer"
+performance$Subgroup[performance$Subgroup == "Black/African American"] <- "Black"
+performance$Subgroup[performance$Subgroup == "Econo. Disadvantaged"] <- "EcoDis"
+performance$Subgroup[performance$Subgroup == "Extended Assessment"] <- "ExAsmt"
+performance$Subgroup[performance$Subgroup == "Hispanic/Latino"] <- "HisLat"
+performance$Subgroup[performance$Subgroup == "Indian Education"] <- "IndEd"
+performance$Subgroup[performance$Subgroup == "Limited English Proficient (LEP)"] <- "LimEng"
+performance$Subgroup[performance$Subgroup == "Migrant Education"] <- "MigEdu"
+performance$Subgroup[performance$Subgroup == "Multi-Racial"] <- "Multi"
+performance$Subgroup[performance$Subgroup == "Pacific Islander"] <- "PacIsl"
+performance$Subgroup[performance$Subgroup == "Students with Disabilities (SWD)"] <- "SWD" 
+performance$Subgroup[performance$Subgroup == "SWD with Accommodations"] <- "SWDAcc" 
+performance$Subgroup[performance$Subgroup == "Talented and Gifted (TAG)"] <- "TAG"
+performance$Subgroup[performance$Subgroup == "Total Population"] <- "Total"
+names(performance)[4:5] <- c("Part", "Met")
+# Clean up data, cast as numeric
+performance$Part <- sub("[<>] ([0-9]{1,2}.[0-9])%", "\\1", performance$Part)
+performance$Part[performance$Part %in% c("*", "-")] <- NA
+performance$Part <- as.numeric(performance$Part)
+performance$Met <- sub("[<>] ([0-9]{1,2}.[0-9])%", "\\1", performance$Met)
+performance$Met[performance$Met %in% c("*", "-")] <- NA
+performance$Met <- as.numeric(performance$Met)
+# Reshape into one row per school, one column per Group_Subject_Metric combo
+performance <- recast(performance, SchoolID ~ Subgroup + Subject + variable, id.var = 1:3)
+# subset to overall data, schools that have compete data
+overall <- performance[, c(1, 66:69)]
+overall <- overall[complete.cases(overall), ]
+# merge in poverty data via percent eligible for free/reduced lunches
+overall <- merge(poverty[, c(1:2, 6)], overall)
+names(overall) <- sub("Total_", "", names(overall))
+head(overall)
+```
+
+\newpage
+
+Let's have a look at the data as collected and see if a pattern emerges.
+
+```{r echo=FALSE}
+p <- ggplot(overall, aes(x = PercentEligible, y = Eng_Met))
+p <- p + geom_point(alpha = 0.5, aes(size = Enrollment))
+p <- p + scale_size_area()
+p <- p + xlim(0, 100) + ylim(0, 100)
+p <- p + geom_smooth(method = lm, se = FALSE, aes(weight = Enrollment))
+p <- p + xlab("Students Eligible for Free/Reduced Lunches (%)")
+p <- p + ylab("Met/Exceeded English Proficiency (%)")
+p <- p + ggtitle("English Proficiency v Free/Reduced Lunch Eligibility, 2014-15")
+p
+```
+
+```{r echo=FALSE}
+p <- ggplot(overall, aes(x = PercentEligible, y = Math_Met))
+p <- p + geom_point(alpha = 0.5, aes(size = Enrollment))
+p <- p + scale_size_area()
+p <- p + xlim(0, 100) + ylim(0, 100)
+p <- p + geom_smooth(method = lm, se = FALSE, aes(weight = Enrollment))
+p <- p + xlab("Students Eligible for Free/Reduced Lunches (%)")
+p <- p + ylab("Met/Exceeded Math Proficiency (%)")
+p <- p + ggtitle("Math Proficiency v Free/Reduced Lunch Eligibility, 2014-15")
+p
+```
+
+\newpage
+
+In order to remove the effect that our measure of poverty has on proficiency, we simply subtract the expected proficiency rates from the reported ones to get a *residual* proficiency rate (or a performance rate relative to expectation).
+
+```{r}
+fit_eng <- lm(Eng_Met ~ Enrollment + PercentEligible, data = overall, weights = Enrollment)
+overall$ResEng <- overall$Eng_Met - predict(fit_eng, overall)
+fit_math <- lm(Math_Met ~ Enrollment + PercentEligible, data = overall, weights = Enrollment)
+overall$ResMath <- overall$Math_Met - predict(fit_math, overall)
+```
+
+Now we collect information on which schools have programs and which do not.
+
+```{r}
+programs <- read.csv("../data/OASK_DB.csv")
+programs <- programs[!is.na(programs$SchoolID), 1]
+programs <- as.data.frame(table(programs))
+names(programs) <- c("SchoolID", "programs")
+overall <- merge(overall, programs, all.x = TRUE)
+overall$programs[is.na(overall$programs)] <- 0
+overall$programs[overall$programs >= 1] <- "1+"
+overall$programs <- as.factor(overall$programs)
+table(overall$programs)
+```
+
+Finally, we plot residual school performance against the number of programs held at the school to see if a pattern emerges.
+
+```{r echo=FALSE}
+p <- ggplot(overall, aes(x = programs, y = ResMath))
+p <- p + geom_boxplot()
+p <- p + xlab("Programs Held")
+p <- p + ylab("Residual Math Proficiency (%)")
+p <- p + ggtitle("Residual Math Proficiency v Programs Held, 2014-15")
+p
+```
+
+```{r echo=FALSE}
+p <- ggplot(overall, aes(x = programs, y = ResEng))
+p <- p + geom_boxplot()
+p <- p + xlab("Programs Held")
+p <- p + ylab("Residual English Proficiency (%)")
+p <- p + ggtitle("Residual English Proficiency v Programs Held, 2014-15")
+p
+```
