@@ -7,7 +7,7 @@ import sqlite3 as lite
 import pandas as pd
 
 # csv files to read
-performance = ('./data/Performance by School_Lang. Arts, Math .csv','Performance')
+performance = ('./data/Performance.csv','Performance')
 summer2015 = ('./data/Summer_2015.csv','Summer_2015')
 oask = ('./data/OASK_DB.csv','OASK')
 rcmediaschoolsaggregate = ('./data/RCmediaSchoolsAggregate.csv','RCmediaSchoolsAggregate')
