@@ -15,3 +15,5 @@ pysqlite2-doc/default.css
 pysqlite2-doc/docutils.css
 
 q1tableimport.sql
+
+python/q2query.out
