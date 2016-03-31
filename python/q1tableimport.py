@@ -9,7 +9,7 @@ import pandas as pd
 # csv files to read
 summer2015 = ('../data/Summer_2015.csv','Summer_2015')
 oask = ('../data/OASK_DB.csv','OASK')
-performance = ('../data/PerformanceMELAS.csv','Performance')
+performance = ('../data/Performance.csv','Performance')
 rcmediaschoolsaggregate = ('../data/RCmediaSchoolsAggregate.csv','RCmediaSchoolsAggregate')
 
 #output file name
