@@ -8,7 +8,7 @@ import pandas as pd
 
 # csv files to read
 summer2015 = ('../data/Summer_2015.csv','Summer_2015')
-oask = ('../data/OASK_DB.csv','OASK')
+oask = ('../data/OASK_DB.csv','OASK_DB')
 performance = ('../data/Performance.csv','Performance')
 rcmediaschoolsaggregate = ('../data/RCmediaSchoolsAggregate.csv','RCmediaSchoolsAggregate')
 freereducedlunch = ('../data/FreeReducedLunch.csv','FreeReducedLunch')
