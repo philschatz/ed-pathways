@@ -1,4 +1,3 @@
-running query: Select Summer_2015.SchoolID, Performance.School, RCmediaSchoolsAggregate.SchoolType, replace(Summer_2015.Activities, ",", "") as "Summer_2015.Activities", FreeReducedLunch.PercentEligible, Performance.Subject, Performance.ParticipationRate2014to2015, Performance.PercentageMeetsORExceeds2014to2015 from Summer_2015 Inner Join RCmediaSchoolsAggregate on Summer_2015.SchoolID=RCmediaSchoolsAggregate.SchoolID Inner Join FreeReducedLunch on Summer_2015.SchoolID=FreeReducedLunch.SchoolID Inner Join Performance on Summer_2015.SchoolID=Performance.SchoolID where Performance.Subgroup="Total Population" order by Performance.School;
 1353,Agnes Stewart Middle School,M,Summer camp,72.46,English Language Arts,99.5,45.9
 1353,Agnes Stewart Middle School,M,Summer camp,72.46,Mathematics,99.5,33.2
 1353,Agnes Stewart Middle School,M,Summer camp,72.46,Science,100.0,62.1
