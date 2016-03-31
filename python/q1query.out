@@ -1,4 +1,4 @@
-#Below are Results from query:  Select Summer_2015.SchoolID, Performance.School, replace(Summer_2015.Activities, ",", "") as "Summer_15.Activities", Performance.Subject, Performance.ParticipationRate2014to2015, Performance.Level3or4in2014to2015 from Summer_2015 Inner Join Performance on Summer_2015.SchoolID=Performance.SchoolID where Performance.Subgroup="Total Population"
+#Below are Results from query:  Select Summer_2015.SchoolID, Performance.School, replace(Summer_2015.Activities, ",", "") as "Summer_15.Activities", Performance.Subject, Performance.ParticipationRate2014to2015, Performance.PercentageMeetsORExceeds2014to2015 from Summer_2015 Inner Join Performance on Summer_2015.SchoolID=Performance.SchoolID where Performance.Subgroup="Total Population"
 #
 30,Garfield Elementary School,Parks & Rec program,English Language Arts,99.4,31.1
 30,Garfield Elementary School,Parks & Rec program,Mathematics,99.4,24.6

@@ -16,7 +16,7 @@ rcmediaschoolsaggregate = ('../data/RCmediaSchoolsAggregate.csv','RCmediaSchools
 outputfilename = 'q1tableimport'
 
 # read into DataTables
-performancedt = pd.read_csv(performance[0],dtype={ 'SchoolID': str, 'ParticipationRate2014to2015': pd.np.float64, 'Level3or4in2014to2015': pd.np.float64})
+performancedt = pd.read_csv(performance[0],dtype={ 'SchoolID': str, 'ParticipationRate2014to2015': pd.np.float64, 'PercentageMeetsORExceeds2014to2015': pd.np.float64})
 summer2015dt = pd.read_csv(summer2015[0], dtype={ 'SchoolID': str })
 oaskdt = pd.read_csv(oask[0], dtype={ 'SchoolID': str })
 rcmediaschoolsaggregatedt = pd.read_csv(rcmediaschoolsaggregate[0], dtype={ 'SchoolID': str})
