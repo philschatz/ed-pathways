@@ -1,3 +1,17 @@
 db/*.sqlite
 *.pyc
 
+.Python
+/bin/*
+/lib/*
+/include/
+
+/q1tableimport.db
+
+pip-selfcheck.json
+
+pysqlite2-doc/default.css
+
+pysqlite2-doc/docutils.css
+
+q1tableimport.sql
