@@ -38,6 +38,7 @@ performance <- performance[, c(3, 6, 7, 9, 10)]
 # Shorten terms, column names
 performance$Subject[performance$Subject == "English Language Arts"] <- "Eng"
 performance$Subject[performance$Subject == "Mathematics"] <- "Math"
+performance$Subject[performance$Subject == "Science"] <- "Sci"
 performance$Subgroup[performance$Subgroup == "American Indian/Alaskan Native"] <- "NaAmer"
 performance$Subgroup[performance$Subgroup == "Black/African American"] <- "Black"
 performance$Subgroup[performance$Subgroup == "Econo. Disadvantaged"] <- "EcoDis"
@@ -63,7 +64,7 @@ performance$Met <- as.numeric(performance$Met)
 # Reshape into one row per school, one column per Group_Subject_Metric combo
 performance <- recast(performance, SchoolID ~ Subgroup + Subject + variable, id.var = 1:3)
 # subset to overall data, schools that have compete data
-overall <- performance[, c(1, 66:69)]
+overall <- performance[, c(1, 100:105)]
 overall <- overall[complete.cases(overall), ]
 # merge in poverty data via percent eligible for free/reduced lunches
 overall <- merge(poverty[, c(1:2, 6)], overall)
