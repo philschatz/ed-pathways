@@ -18,7 +18,7 @@ all_rows = results.fetchall()
 
 #print rows
 for row in all_rows:
-    print '%s,%s,%s,%s,%s,%s' % row 
+    print('%s,%s,%s,%s,%s,%s' % row)
     
 con.close()
 

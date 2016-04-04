@@ -40,4 +40,4 @@ with open(outputfilename+'.sql', 'w') as f:
 
 con.close()
 
-print 'done with import'
+print('done with import')
