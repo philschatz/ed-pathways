@@ -100,6 +100,18 @@ p <- p + ggtitle("Math Proficiency v Free/Reduced Lunch Eligibility, 2014-15")
 p
 ```
 
+```{r echo=FALSE}
+p <- ggplot(overall, aes(x = PercentEligible, y = Sci_Met))
+p <- p + geom_point(alpha = 0.5, aes(size = Enrollment))
+p <- p + scale_size_area()
+p <- p + xlim(0, 100) + ylim(0, 100)
+p <- p + geom_smooth(method = lm, se = FALSE, aes(weight = Enrollment))
+p <- p + xlab("Students Eligible for Free/Reduced Lunches (%)")
+p <- p + ylab("Met/Exceeded Science Proficiency (%)")
+p <- p + ggtitle("Science Proficiency v Free/Reduced Lunch Eligibility, 2014-15")
+p
+```
+
 \newpage
 
 In order to remove the effect that our measure of poverty has on proficiency, we simply subtract the expected proficiency rates from the reported ones to get a *residual* proficiency rate (or a performance rate relative to expectation).
@@ -109,6 +121,8 @@ fit_eng <- lm(Eng_Met ~ Enrollment + PercentEligible, data = overall, weights = 
 overall$ResEng <- overall$Eng_Met - predict(fit_eng, overall)
 fit_math <- lm(Math_Met ~ Enrollment + PercentEligible, data = overall, weights = Enrollment)
 overall$ResMath <- overall$Math_Met - predict(fit_math, overall)
+fit_sci <- lm(Sci_Met ~ Enrollment + PercentEligible, data = overall, weights = Enrollment)
+overall$ResSci <- overall$Sci_Met - predict(fit_sci, overall)
 ```
 
 Now we collect information on which schools have programs and which do not.
@@ -120,7 +134,7 @@ programs <- as.data.frame(table(programs))
 names(programs) <- c("SchoolID", "programs")
 overall <- merge(overall, programs, all.x = TRUE)
 overall$programs[is.na(overall$programs)] <- 0
-overall$programs[overall$programs >= 1] <- "1+"
+overall$programs[overall$programs >= 3] <- "3+"
 overall$programs <- as.factor(overall$programs)
 table(overall$programs)
 ```
@@ -142,5 +156,14 @@ p <- p + geom_boxplot()
 p <- p + xlab("Programs Held")
 p <- p + ylab("Residual English Proficiency (%)")
 p <- p + ggtitle("Residual English Proficiency v Programs Held, 2014-15")
+p
+```
+
+```{r echo=FALSE}
+p <- ggplot(overall, aes(x = programs, y = ResSci))
+p <- p + geom_boxplot()
+p <- p + xlab("Programs Held")
+p <- p + ylab("Residual Science Proficiency (%)")
+p <- p + ggtitle("Residual Science Proficiency v Programs Held, 2014-15")
 p
 ```
