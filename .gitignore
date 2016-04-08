@@ -6,7 +6,7 @@ db/*.sqlite
 /lib/*
 /include/
 
-/q1tableimport.db
+python/q1tableimport.db
 
 pip-selfcheck.json
 
