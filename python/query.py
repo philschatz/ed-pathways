@@ -17,8 +17,9 @@ def usage():
     sys.exit(1)
 
 argc = len(sys.argv)
-if argc < 1:
+if argc < 2:
     usage()
+    sys.exit(1)
 
 dbfilename = 'q1tableimport.db'
 query = sys.argv[1]
