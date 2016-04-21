@@ -12,7 +12,7 @@ oask = ('../data/OASK_DB.csv','OASK_DB')
 performance = ('../data/Performance.csv','Performance')
 rcmediaschoolsaggregate = ('../data/RCmediaSchoolsAggregate.csv','RCmediaSchoolsAggregate')
 freereducedlunch = ('../data/FreeReducedLunch.csv','FreeReducedLunch')
-absent = ('../data/AbsentReport_1415.csv', 'AbsentReport1415')
+absent = ('../data/AbsentReport_1415.csv', 'AbsentReport_1415')
 
 #output file name
 outputfilename = 'q1tableimport'
