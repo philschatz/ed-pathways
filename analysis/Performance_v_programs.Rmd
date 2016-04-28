@@ -100,11 +100,11 @@ levels(agg$Subject) <- c("English", "Math", "Science")
 
 Afterschool programs can serve low income kids, working to lower the achievement gap and level the playing field.  These programs are chronically under-funded in Oregon; low-income programs are often publicly funded and are unable to sustain themselves without this stream of funding.
 
-We look at the effect of summer and afterschool programs on the performance of Oregon schools after controlling for the effects of poverty.  Our conclusion is that programming has a strongly positive correlation with performance, but with some caveats about the data we have available.
+We look at the effects of summer and afterschool programs on the English, Math, and Science performance of Oregon schools.  After controlling for the general effects of poverty, we find that presence of programs has a strong positive correlation with school performance.
 
 ## Summary
 
-We looked at how well 993 schools did in each subject as compared to schools of a similar poverty level and grade level, and computed averages.  The results are summarized below.
+We compared the performance of a total of 993 schools across three subjects (English, Math, Science) and three school types (Elementary, Middle, and High Schools).  The key results are summarized below.
 
 ```{r echo=FALSE}
 g <- ggplot(data = agg, aes(x = Programs, y = value, group = 1))
@@ -116,6 +116,8 @@ g <- g + xlab("Number of Programs")
 g <- g + ggtitle("Performance by School Type and Subject, 2014-15")
 g
 ```
+
+The diagram above shows that for each of the three subjects, the average performance of a given school type (e.g. Elementary) is higher for the schools that have afterschool and summer programs.
 
 There are several caveats that must be acknowledged along with this analysis:
 
