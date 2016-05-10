@@ -12,6 +12,7 @@ oask = ('../data/OASK_DB.csv','OASK_DB')
 performance = ('../data/Performance.csv','Performance')
 rcmediaschoolsaggregate = ('../data/RCmediaSchoolsAggregate.csv','RCmediaSchoolsAggregate')
 freereducedlunch = ('../data/FreeReducedLunch.csv','FreeReducedLunch')
+absent = ('../data/AbsentReport_1415.csv', 'AbsentReport_1415')
 
 #output file name
 outputfilename = 'q1tableimport'
@@ -22,6 +23,7 @@ summer2015dt = pd.read_csv(summer2015[0], dtype={ 'SchoolID': str })
 oaskdt = pd.read_csv(oask[0], dtype={ 'SchoolID': str })
 rcmediaschoolsaggregatedt = pd.read_csv(rcmediaschoolsaggregate[0], dtype={ 'SchoolID': str})
 freereducedlunchdt = pd.read_csv(freereducedlunch[0], dtype={ 'SchoolID': str})
+absentdt = pd.read_csv(absent[0], dtype={ 'SchoolID': str})
 
 #open db connection (create)
 con = lite.connect(outputfilename+'.db')
@@ -32,6 +34,7 @@ summer2015dt.to_sql(summer2015[1], con, if_exists='replace')
 oaskdt.to_sql(oask[1], con, if_exists='replace')
 rcmediaschoolsaggregatedt.to_sql(rcmediaschoolsaggregate[1], con, if_exists='replace')
 freereducedlunchdt.to_sql(freereducedlunch[1], con, if_exists='replace')
+absentdt.to_sql(absent[1], con, if_exists='replace')
 
 # create ddl
 with open(outputfilename+'.sql', 'w') as f:
