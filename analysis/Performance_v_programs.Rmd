@@ -5,6 +5,7 @@ output: pdf_document
 ---
 
 ```{r, echo=FALSE, message=FALSE}
+# import packages for additional functionality
 library(reshape2)
 library(ggplot2)
 ```
@@ -41,57 +42,78 @@ performance$Subgroup[performance$Subgroup == "SWD with Accommodations"] <- "SWDA
 performance$Subgroup[performance$Subgroup == "Talented and Gifted (TAG)"] <- "TAG"
 performance$Subgroup[performance$Subgroup == "Total Population"] <- "Total"
 names(performance)[4:5] <- c("Part", "Met")
-# Clean up data, cast as numeric
+# Find instances of '> 95.0%' or '< 5.0%' and replace them with '95.0' and '5.0'
 performance$Part <- sub("[<>] ([0-9]{1,2}.[0-9])%", "\\1", performance$Part)
-performance$Part[performance$Part %in% c("*", "-")] <- NA
-performance$Part <- as.numeric(performance$Part)
 performance$Met <- sub("[<>] ([0-9]{1,2}.[0-9])%", "\\1", performance$Met)
+# Replace '*' and '-' with NA
+performance$Part[performance$Part %in% c("*", "-")] <- NA
 performance$Met[performance$Met %in% c("*", "-")] <- NA
+# Cast proportions as numeric, so that we can do math on them (they are read in as strings)
+performance$Part <- as.numeric(performance$Part)
 performance$Met <- as.numeric(performance$Met)
-# Reshape into one row per school, one column per Group_Subject_Metric combo
+# Reshape into one row per school, one column per Group_Subject_Metric combo (reshape2)
 performance <- recast(performance, SchoolID ~ Subgroup + Subject + variable, id.var = 1:3)
-# subset to overall data, schools that have compete data
+# Subset to overall data, schools that have compete data
 overall <- performance[, c(1, 100:105)]
 overall <- overall[complete.cases(overall), ]
-# merge in poverty data via percent eligible for free/reduced lunches
+# Merge in poverty data via percent eligible for free/reduced lunches
 overall <- merge(poverty[, c(1:2, 6)], overall)
-names(overall) <- sub("Total_", "", names(overall))# add school type
+# Remove the 'Total_' before the metrics in the column names
+names(overall) <- sub("Total_", "", names(overall))
+# Read in and add school type
 types <- read.csv("../data/RCmediaSchoolsAggregate.csv")[, c(4,8)]
 overall <- merge(types, overall)
+# Reorder the SchoolType factor so that they appear in a natural order
 overall$SchoolType <- factor(overall$SchoolType, c("E", "M", "H"))
 ```
 
 ```{r echo=FALSE}
-# fit new linear models, dependent on school type
+# Fit linear models, dependent on school type
 fit_eng <- lm(Eng_Met ~ PercentEligible * SchoolType, data = overall, weights = Enrollment)
-overall$ResEng <- overall$Eng_Met - predict(fit_eng, overall)
 fit_math <- lm(Math_Met ~ PercentEligible * SchoolType, data = overall, weights = Enrollment)
-overall$ResMath <- overall$Math_Met - predict(fit_math, overall)
 fit_sci <- lm(Sci_Met ~ PercentEligible * SchoolType, data = overall, weights = Enrollment)
+# Compute how far removed each school's performances are relative to
+# the expectations of the above models (residual performance)
+overall$ResEng <- overall$Eng_Met - predict(fit_eng, overall)
+overall$ResMath <- overall$Math_Met - predict(fit_math, overall)
 overall$ResSci <- overall$Sci_Met - predict(fit_sci, overall)
 ```
 
 ```{r, echo=FALSE}
+# Read in the programs list
 programs <- read.csv("../data/OASK_DB.csv")
+# Since the only thing we need for this analysis is a count of how many
+# programs exist at each school, we simply count how many times each
+# SchoolID appears in this list.
+# This line grabs the SchoolID column in every row where SchoolID isn't NA.
 programs <- programs[!is.na(programs$SchoolID), 1]
+# The table function is a quick way to count what's in a vector.
 programs <- as.data.frame(table(programs))
+# Rename the columns
 names(programs) <- c("SchoolID", "Programs")
+# Add the counts to the data set we've collected
 overall <- merge(overall, programs, all.x = TRUE)
+# If a school didn't have a program in the file, we change the NA to a 0
 overall$Programs[is.na(overall$Programs)] <- 0
+# To keep things simple, we collapse all non-zero counts down to '1+'
 overall$Programs[overall$Programs >= 1] <- "1+"
 overall$Programs <- as.factor(overall$Programs)
 # table(overall$Programs)
 ```
 
 ```{r echo=FALSE}
-# aggregate means
+# Compute the mean residual performance in each subject, grouped by
+# SchoolType and whether or not the school hosts a program
 agg_eng <- aggregate(ResEng ~ SchoolType + Programs, data = overall, FUN = mean)
 agg_math <- aggregate(ResMath ~ SchoolType + Programs, data = overall, FUN = mean)
 agg_sci <- aggregate(ResSci ~ SchoolType + Programs, data = overall, FUN = mean)
+# Put all the means back into one data frame
 agg <- merge(agg_eng, agg_math)
 agg <- merge(agg, agg_sci)
-# Prepare for graphing
+# Instead of one row for each subject, we collect the means
+# into separate columns so that each school is a row
 agg <- melt(agg, id.vars = 1:2, variable.name = "Subject")
+# Human-readable labels
 levels(agg$SchoolType) = c("Elementary", "Middle", "High")
 levels(agg$Subject) <- c("English", "Math", "Science")
 ```
@@ -107,10 +129,17 @@ We look at the effects of summer and afterschool programs on the English, Math, 
 We compared the performance of a total of 993 schools across three subjects (English, Math, Science) and three school types (Elementary, Middle, and High Schools).  The key results are summarized below.
 
 ```{r echo=FALSE}
+# These commands generate a plot.  As they're all basically the same,
+# we'll just go through this one and update when new methods are used.
+# We first define the data set and assign variables to columns
 g <- ggplot(data = agg, aes(x = Programs, y = value, group = 1))
+# Next we plot a point for each class of school, colored by SchoolType
 g <- g + geom_point(aes(color = SchoolType))
+# We break the figure into three, one for each Subject
 g <- g + facet_grid(. ~ Subject)
+# Force symmetric axes
 g <- g + ylim(-10, 10)
+# Add x- and y-axis labels and a title
 g <- g + ylab("Performance Relative to Expectations (%)")
 g <- g + xlab("Number of Programs")
 g <- g + ggtitle("Performance by School Type and Subject, 2014-15")
@@ -133,9 +162,12 @@ In the following charts, we show the percent of students that met or exceeded th
 
 ```{r echo=FALSE}
 p <- ggplot(overall, aes(x = PercentEligible, y = Eng_Met))
+# Alpha affects the points' opacity; we also size each dot by Enrollment
 p <- p + geom_point(alpha = 0.5, aes(size = Enrollment, color = SchoolType))
+# We want size to scale with area, so that a school twice as big look so
 p <- p + scale_size_area()
 p <- p + xlim(0, 100) + ylim(0, 100)
+# We add lines of best fit, one for each SchoolType
 p <- p + geom_smooth(method = lm, se = FALSE, aes(color = SchoolType))
 p <- p + xlab("Students Eligible for Free/Reduced Lunches (%)")
 p <- p + ylab("Met/Exceeded English Proficiency (%)")
@@ -170,8 +202,12 @@ p
 To focus on the effect of afterschool programs, we compute the difference between a school's percentage of students that meet or exceed the standard in each subject and the expected percentage based on FRLE rate.  The result is a residual performance rating for each school, where a rating of 3 would suggest that the school exceeded its expected performance in a subject by 3 percentage points.
 
 ```{r echo=FALSE}
+# To give a fuller picture of the distribution of the residual performance 
+# data, we use box-and-whisker plots.
 p <- ggplot(overall, aes(x = SchoolType, y = ResEng))
+# Make box-and-whisker plots, coloring the boxes by existance of Programming
 p <- p + geom_boxplot(aes(fill = Programs))
+# Override the default color choices
 p <- p + scale_fill_manual(values = c("red", "green"))
 p <- p + xlab("Grade Level")
 p <- p + ylab("Residual English Proficiency (%)")
