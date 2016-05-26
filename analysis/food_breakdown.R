@@ -1,5 +1,5 @@
 # Read in program data
-programs <- read.csv('CACFP.csv')
+programs <- read.csv('../data/CACFP.csv')
 
 # Filter out non-food programs
 food <- programs[programs$Program.Type == 'After School At Risk Meals and Snacks Center',]
