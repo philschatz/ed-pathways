@@ -158,6 +158,6 @@ g <- g + ggtitle("Performance by Subject in Elementary, 2014-15")
 g
 
 # Unfortunately, performance differences don't seem to be significant.
-anova(lm(ResEng ~ Programs + Wealthy, data = overall))
-anova(lm(ResMath ~ Programs + Wealthy, data = overall))
-anova(lm(ResSci ~ Programs + Wealthy, data = overall))
+anova(lm(ResEng ~ Programs + Wealthy, data = overall, weights = Enrollment))
+anova(lm(ResMath ~ Programs + Wealthy, data = overall, weights = Enrollment))
+anova(lm(ResSci ~ Programs + Wealthy, data = overall, weights = Enrollment))
