@@ -56,8 +56,6 @@ overall$SchoolType <- factor(overall$SchoolType, c("E", "M", "H"))
 # Remove non-elementary schools
 overall <- overall[overall$SchoolType == 'E', -2]
 
-summary(overall$PercentEligible)
-
 # Add an Impoverished column to say whether or not a school is above
 # the median level of poverty
 overall$Impoverished <- overall$PercentEligible >= median(overall$PercentEligible)
@@ -95,19 +93,25 @@ agg <- melt(agg, id.vars = 1:2, variable.name = "Subject")
 # Human-readable levels
 levels(agg$Subject) <- c("English", "Math", "Science")
 
-# These commands generate a plot.  As they're all basically the same,
-# we'll just go through this one and update when new methods are used.
-# We first define the data set and assign variables to columns
+# Generate a plot of poerformance differences by subject to see
+# if simply having a program is beneficial, and whether such
+# an effect is stronger or not for more impoverished schools
 g <- ggplot(data = agg, aes(x = Programs, y = value, group = 1))
 # Next we plot a point for each class of school, colored by SchoolType
 g <- g + geom_point(aes(color = Impoverished))
 # We break the figure into three, one for each Subject
 g <- g + facet_grid(. ~ Subject)
-# Force symmetric axes
-# g <- g + ylim(-10, 10)
 # Add x- and y-axis labels and a title
 g <- g + ylab("Median Meeting or Exceeding Standards (%)")
 g <- g + xlab("Number of Programs")
 g <- g + ggtitle("Performance by FRLE and Subject, 2014-15")
 g
 
+# Compute significance levels of each factor on each subject
+# (Impoverished is always significant, Programs is not)
+t.test(Eng_Met ~ Impoverished, overall)
+t.test(Math_Met ~ Impoverished, overall)
+t.test(Sci_Met ~ Impoverished, overall)
+t.test(Eng_Met ~ Programs, overall)
+t.test(Math_Met ~ Programs, overall)
+t.test(Sci_Met ~ Programs, overall)
