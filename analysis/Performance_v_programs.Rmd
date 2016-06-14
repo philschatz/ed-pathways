@@ -150,8 +150,8 @@ The diagram above shows that for each of the three subjects, the average perform
 
 There are several caveats that must be acknowledged along with this analysis:
 
- * We do not have complete data on the majority of the 2869 schools in Oregon
- * We have much more data on elementary schools than on middle or high schools
+ * We do not have complete data on 1234 schools in Oregon
+ * There are many more elementary schools than on middle or high schools
  * Most of the schools with complete data also host programs
 
 ## Methodology
