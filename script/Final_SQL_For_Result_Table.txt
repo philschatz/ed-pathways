@@ -1,0 +1,10 @@
+Select prf.SchoolID, prf.School, prf.District, RCAgg.SchoolType, FrRedLnch.Enrollment, coalesce(program.No_of_Prog,0) as No_of_Program, FrRedLnch.PercentEligible, abst.PercentofStudentsNotChronicallyAbsent, 
+prf.Subject, prf.ParticipationRate2014to2015, prf.PercentageMeetsORExceeds2014to2015 
+from Performance prf
+Inner Join RCmediaSchoolsAggregate RCAgg on prf.SchoolID=RCAgg.SchoolID
+Inner Join FreeReducedLunch FrRedLnch on prf.SchoolID=FrRedLnch.SchoolID
+Inner Join AbsentReport_1415 abst on prf.SchoolID=abst.SchoolID 
+Left Join (Select SchoolID, count(Program_name) as No_of_Prog from OASK_DB where SchoolID <> '' group by 1) as program on prf.SchoolID=program.SchoolID 
+Where prf.Subgroup='Total Population' and abst.Subgroup='Total'
+group by 1,2,3,4,5,6,7,8,9,10,11
+Order by prf.School
