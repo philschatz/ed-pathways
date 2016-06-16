@@ -1,12 +1,10 @@
-# ed-pathways
+# education-data
 
-This _(so far)_ contains CSV data
+This repository contains the source data, analysis reports, and scripts to convert the data.
 
-# :tada: :balloon: Contributing
-
-Please feel free to make edits, but create a Pull Request so others will be notified of changes and can discuss :smile:
-
-Also, see [Trello Issue Board](https://trello.com/b/HJQ4ZF9v)
+1. [./data/](./data) contains the source CSV data
+2. [./script/](./script) contains scripts to clean up the CSV files by importing them into a SQLite Database and then outputting them to CSV
+3. [./analysis/](./analysis) contains the Jupyter and R Studio files and reports
 
 
 # Running python query:
@@ -20,3 +18,8 @@ Also, see [Trello Issue Board](https://trello.com/b/HJQ4ZF9v)
 - `cd python`
 - `python ./q1tableimport.py`
 - `python ./q1query.py`
+
+
+# :tada: :balloon: Contributing
+
+Please feel free to make edits, but create a Pull Request so others will be notified of changes and can discuss :smile:
